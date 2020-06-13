@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\Repos\\MetaDRWManager\\MetaDRWManagerSolution\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj": {}
+    "C:\\Users\\Kenneth Arnesen\\OneDrive - Varsity College\\Repos\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj": {}
   },
   "projects": {
-    "D:\\Development\\Repos\\MetaDRWManager\\MetaDRWManagerSolution\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj": {
+    "C:\\Users\\Kenneth Arnesen\\OneDrive - Varsity College\\Repos\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\Repos\\MetaDRWManager\\MetaDRWManagerSolution\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Kenneth Arnesen\\OneDrive - Varsity College\\Repos\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj",
         "projectName": "MetaDomingoLibrary",
-        "projectPath": "D:\\Development\\Repos\\MetaDRWManager\\MetaDRWManagerSolution\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj",
+        "projectPath": "C:\\Users\\Kenneth Arnesen\\OneDrive - Varsity College\\Repos\\MetaDRWManager\\MetaDomingoLibrary\\MetaDomingoLibrary.csproj",
         "packagesPath": "C:\\Users\\Kenneth Arnesen\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\Repos\\MetaDRWManager\\MetaDRWManagerSolution\\MetaDRWManager\\MetaDomingoLibrary\\obj\\",
+        "outputPath": "C:\\Users\\Kenneth Arnesen\\OneDrive - Varsity College\\Repos\\MetaDRWManager\\MetaDomingoLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
