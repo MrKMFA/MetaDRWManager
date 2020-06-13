@@ -190,7 +190,7 @@ namespace MetaDomingoRoofWorks.Services
 
                 await _userManager.CreateAsync(superAdmin, _superAdminDefaultOptions.Password);
 
-                //loop all the roles and then fill to SuperAdmin so he become powerfull
+                //loop through all the roles, then add to SuperAdmin
                 foreach (var item in typeof(MetaDomingoRoofWorks.MVC.Pages).GetNestedTypes())
                 {
                     var roleName = item.Name;
