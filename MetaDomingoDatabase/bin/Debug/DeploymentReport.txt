@@ -1,0 +1,44 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[BaseCompany] (Table)
+       [dbo].[Currency] (Table)
+       [dbo].[Customer] (Table)
+       [dbo].[CustomerInvoice] (Table)
+       [dbo].[CustomerInvoiceLine] (Table)
+       [dbo].[Employee] (Table)
+       [dbo].[EmployeeJobcard] (Table)
+       [dbo].[Item] (Table)
+       [dbo].[Jobcard] (Table)
+       [dbo].[JobcardMaterial] (Table)
+       [dbo].[Jobtype] (Table)
+       [dbo].[Tax] (Table)
+       [dbo].[Vendor] (Table)
+       [dbo].[VendorInvoice] (Table)
+       [dbo].[VendorInvoiceLine] (Table)
+       [dbo].[FK_CustomerInvoice_Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_CustomerInvoice_BaseCompany_BaseCompanyId] (Foreign Key)
+       [dbo].[FK_CustomerInvoiceLine_CustomerInvoice_CustomerInvoiceId] (Foreign Key)
+       [dbo].[FK_CustomerInvoiceLine_Item_ItemId] (Foreign Key)
+       [dbo].[FK_Item_Currency_CurrencyId] (Foreign Key)
+       [dbo].[FK_Item_Tax_TaxId] (Foreign Key)
+       [dbo].[FK_Jobcard_Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_Jobcard_Employee_CreatedBy] (Foreign Key)
+       [dbo].[FK_Jobcard_Jobtype_JobtypeId] (Foreign Key)
+       [dbo].[FK_Jobtype_Currency_CurrencyId] (Foreign Key)
+       [dbo].[FK_Jobtype_Tax_TaxId] (Foreign Key)
+       [dbo].[FK_VendorInvoice_MyCompany_BaseCompanyId] (Foreign Key)
+       [dbo].[FK_VendorInvoice_Vendor_VendorId] (Foreign Key)
+       [dbo].[FK_VendorInvoiceLine_Item_ItemId] (Foreign Key)
+       [dbo].[FK_VendorInvoiceLine_VendorInvoice_VendorInvoiceId] (Foreign Key)
+
+** Supporting actions

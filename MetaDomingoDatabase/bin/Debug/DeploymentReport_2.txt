@@ -1,0 +1,168 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[BaseCompany]
+       [dbo].[Customer]
+       [dbo].[Employee]
+       [dbo].[Jobcard]
+       [dbo].[Vendor]
+       [dbo].[VendorInvoiceLine]
+     Clustered indexes that will be dropped
+       unnamed constraint on [dbo].[EmployeeJobcard]
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[BaseCompany].[Address] is being dropped, data loss could occur.
+       The column [dbo].[BaseCompany].[AddressLine1] on table [dbo].[BaseCompany] must be added, but the column has no default
+         value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue
+         you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+       The column [dbo].[BaseCompany].[CityId] on table [dbo].[BaseCompany] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[BaseCompany].[LastUpdated] on table [dbo].[BaseCompany] must be added, but the column has no default
+         value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue
+         you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+       The column [dbo].[BaseCompany].[PostCode] on table [dbo].[BaseCompany] must be added, but the column has no default
+         value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue
+         you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+       The column [dbo].[Customer].[Address] is being dropped, data loss could occur.
+       The column [dbo].[Customer].[AddressLine1] on table [dbo].[Customer] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Customer].[CityId] on table [dbo].[Customer] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Customer].[PostCode] on table [dbo].[Customer] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The type for column Quantity in table [dbo].[CustomerInvoiceLine] is currently  REAL NOT NULL but is being changed to 
+         INT NOT NULL. Data loss could occur.
+       The column [dbo].[Employee].[Address] is being dropped, data loss could occur.
+       The column [dbo].[Employee].[AddressLine1] on table [dbo].[Employee] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Employee].[CityId] on table [dbo].[Employee] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Employee].[PostCode] on table [dbo].[Employee] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The table [dbo].[EmployeeJobcard] is being dropped and re-created since all non-computed columns within the table have
+         been redefined.
+       The column [dbo].[Item].[LastUpdated] on table [dbo].[Item] must be added, but the column has no default value and does
+         not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either:
+         add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a
+         deployment option.
+       The type for column TaxRate in table [dbo].[Tax] is currently  REAL NOT NULL but is being changed to  DECIMAL (3, 2) NOT
+         NULL. Data loss could occur.
+       The column [dbo].[Vendor].[Address] is being dropped, data loss could occur.
+       The column [dbo].[Vendor].[AddressLine1] on table [dbo].[Vendor] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Vendor].[CityId] on table [dbo].[Vendor] must be added, but the column has no default value and does
+         not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either:
+         add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a
+         deployment option.
+       The column [dbo].[Vendor].[PostCode] on table [dbo].[Vendor] must be added, but the column has no default value and does
+         not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either:
+         add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a
+         deployment option.
+       The type for column Quantity in table [dbo].[VendorInvoiceLine] is currently  REAL NOT NULL but is being changed to  INT
+         NOT NULL. Data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[EmployeeJobcard] (Primary Key)
+       [dbo].[EmployeeJobcard] (Table)
+     Table rebuild
+       [dbo].[BaseCompany] (Table)
+       [dbo].[Customer] (Table)
+       [dbo].[Employee] (Table)
+       [dbo].[Jobcard] (Table)
+       [dbo].[Vendor] (Table)
+       [dbo].[VendorInvoiceLine] (Table)
+     Alter
+       [dbo].[CustomerInvoiceLine] (Table)
+       [dbo].[Item] (Table)
+       [dbo].[Tax] (Table)
+     Create
+       [dbo].[EmployeeJobcard] (Table)
+       [dbo].[City] (Table)
+       Default Constraint: unnamed constraint on [dbo].[EmployeeJobcard] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[EmployeeJobcard] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[City] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Currency] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[CustomerInvoice] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[CustomerInvoice] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[CustomerInvoiceLine] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Item] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Jobtype] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Tax] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Tax] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[VendorInvoice] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[VendorInvoice] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[VendorInvoice] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[VendorInvoice] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[VendorInvoice] (Default Constraint)
+       [dbo].[FK_BaseCompany_City_CityId] (Foreign Key)
+       [dbo].[FK_Customer_City_CityId] (Foreign Key)
+       [dbo].[FK_Employee_City_CityId] (Foreign Key)
+       [dbo].[FK_EmployeeJobcard_Employee_EmployeeId] (Foreign Key)
+       [dbo].[FK_Vendor_City_CityId] (Foreign Key)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_CustomerInvoice_BaseCompany_BaseCompanyId] (Foreign Key)
+       [dbo].[FK_VendorInvoice_MyCompany_BaseCompanyId] (Foreign Key)
+       [dbo].[FK_CustomerInvoice_Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_Jobcard_Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_Jobcard_Employee_CreatedBy] (Foreign Key)
+       [dbo].[FK_Jobcard_Jobtype_JobtypeId] (Foreign Key)
+       [dbo].[FK_VendorInvoice_Vendor_VendorId] (Foreign Key)
+       [dbo].[FK_VendorInvoiceLine_VendorInvoice_VendorInvoiceId] (Foreign Key)
+       [dbo].[FK_VendorInvoiceLine_Item_ItemId] (Foreign Key)
+     Create
+       [dbo].[FK_CustomerInvoice_BaseCompany_BaseCompanyId] (Foreign Key)
+       [dbo].[FK_VendorInvoice_MyCompany_BaseCompanyId] (Foreign Key)
+       [dbo].[FK_CustomerInvoice_Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_Jobcard_Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_Jobcard_Employee_CreatedBy] (Foreign Key)
+       [dbo].[FK_Jobcard_Jobtype_JobtypeId] (Foreign Key)
+       [dbo].[FK_VendorInvoice_Vendor_VendorId] (Foreign Key)
+       [dbo].[FK_VendorInvoiceLine_VendorInvoice_VendorInvoiceId] (Foreign Key)
+       [dbo].[FK_VendorInvoiceLine_Item_ItemId] (Foreign Key)
+
+The column [dbo].[BaseCompany].[Address] is being dropped, data loss could occur.
+The column [dbo].[BaseCompany].[AddressLine1] on table [dbo].[BaseCompany] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[BaseCompany].[CityId] on table [dbo].[BaseCompany] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[BaseCompany].[LastUpdated] on table [dbo].[BaseCompany] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[BaseCompany].[PostCode] on table [dbo].[BaseCompany] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Customer].[Address] is being dropped, data loss could occur.
+The column [dbo].[Customer].[AddressLine1] on table [dbo].[Customer] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Customer].[CityId] on table [dbo].[Customer] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Customer].[PostCode] on table [dbo].[Customer] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The type for column Quantity in table [dbo].[CustomerInvoiceLine] is currently  REAL NOT NULL but is being changed to  INT NOT NULL. Data loss could occur.
+The column [dbo].[Employee].[Address] is being dropped, data loss could occur.
+The column [dbo].[Employee].[AddressLine1] on table [dbo].[Employee] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Employee].[CityId] on table [dbo].[Employee] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Employee].[PostCode] on table [dbo].[Employee] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The table [dbo].[EmployeeJobcard] is being dropped and re-created since all non-computed columns within the table have been redefined.
+The column [dbo].[Item].[LastUpdated] on table [dbo].[Item] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The type for column TaxRate in table [dbo].[Tax] is currently  REAL NOT NULL but is being changed to  DECIMAL (3, 2) NOT NULL. Data loss could occur.
+The column [dbo].[Vendor].[Address] is being dropped, data loss could occur.
+The column [dbo].[Vendor].[AddressLine1] on table [dbo].[Vendor] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Vendor].[CityId] on table [dbo].[Vendor] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Vendor].[PostCode] on table [dbo].[Vendor] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The type for column Quantity in table [dbo].[VendorInvoiceLine] is currently  REAL NOT NULL but is being changed to  INT NOT NULL. Data loss could occur.
+The column VendorInvoiceId on table [dbo].[VendorInvoiceLine] must be changed from NULL to NOT NULL. If the table contains data, the ALTER script may not work. To avoid this issue, you must add values to this column for all rows or mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+
