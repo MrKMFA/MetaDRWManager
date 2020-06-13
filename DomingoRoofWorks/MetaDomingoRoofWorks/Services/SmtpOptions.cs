@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MetaDomingoRoofWorks.Services
+{
+    public class SmtpOptions
+    {
+        public string SmtpUserName { get; set; }
+        public string SmtpPassword { get; set; }
+        public string SmtpHost { get; set; }
+        public int SmtpPort { get; set; }
+        public bool SmtpSSL { get; set; }
+        public string FromEmail { get; set; }
+        public string FromFullName { get; set; }
+    }
+}

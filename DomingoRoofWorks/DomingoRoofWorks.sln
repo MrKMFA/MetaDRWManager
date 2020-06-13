@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MetaDomingoDatabase", "Meta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaDomingoLibrary", "MetaDomingoLibrary\MetaDomingoLibrary.csproj", "{F16A198F-CA8D-47D3-9B1F-464D5F57032A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaDomingoRoofWorks", "MetaDomingoRoofWorks\MetaDomingoRoofWorks.csproj", "{1FC0CF9E-3150-414B-9348-664C96B1E0E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{F16A198F-CA8D-47D3-9B1F-464D5F57032A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F16A198F-CA8D-47D3-9B1F-464D5F57032A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F16A198F-CA8D-47D3-9B1F-464D5F57032A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC0CF9E-3150-414B-9348-664C96B1E0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC0CF9E-3150-414B-9348-664C96B1E0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC0CF9E-3150-414B-9348-664C96B1E0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC0CF9E-3150-414B-9348-664C96B1E0E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
