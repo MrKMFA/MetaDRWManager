@@ -80,6 +80,7 @@
     <Build Include="dbo\Tables\EmployeeJobcard.sql" />
     <Build Include="dbo\Tables\City.sql" />
     <Build Include="dbo\Functions\udfGetJobcardMaterials.sql" />
+    <Build Include="dbo\Functions\udfGetJobcardEmployees.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
