@@ -7,7 +7,7 @@
     [ItemName]        NVARCHAR (MAX)  NOT NULL,
     [CostPrice]       MONEY NOT NULL,
     [TaxId]           NVARCHAR (450)  NOT NULL,
-    [SalePrice]       MONEY NOT NULL,
+    [UnitPrice]       MONEY NOT NULL,
     [MarkupPerc]      DECIMAL (3, 2)  NOT NULL DEFAULT 1.00,
     [LastUpdated] DATETIME2 NOT NULL, 
     CONSTRAINT [PK_Item] PRIMARY KEY CLUSTERED ([ItemId] ASC),

@@ -79,8 +79,12 @@
     <Build Include="dbo\Tables\JobcardMaterial.sql" />
     <Build Include="dbo\Tables\EmployeeJobcard.sql" />
     <Build Include="dbo\Tables\City.sql" />
+    <Build Include="dbo\Functions\udfGetJobcardMaterials.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MetaDomingoDatabase.refactorlog" />
   </ItemGroup>
 </Project>
