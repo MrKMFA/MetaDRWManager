@@ -17,7 +17,12 @@ BEGIN
 		IF EXISTS(SELECT * FROM [JobcardMaterial] x
 					WHERE x.JobcardId = @JobcardId)
 			INSERT INTO  @retMaterialsUsed
-				SELECT i.ItemId, i.[ItemName], i.[ItemDescription], x.Quantity, x.CreatedAt
+				SELECT
+					i.ItemId,
+					i.[ItemName],
+					i.[ItemDescription],
+					x.Quantity,
+					x.CreatedAt
 				FROM [Item] AS i
 					INNER JOIN [JobcardMaterial] x
 					ON i.ItemId = x.ItemId
