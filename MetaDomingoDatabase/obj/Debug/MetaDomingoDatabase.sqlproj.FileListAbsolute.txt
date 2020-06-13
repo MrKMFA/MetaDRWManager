@@ -1,9 +1,0 @@
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\bin\Debug\MetaDomingoDatabase.dacpac
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\obj\Debug\Model.xml
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\obj\Debug\refactor.xml
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\obj\Debug\postdeploy.sql
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\obj\Debug\predeploy.sql
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\obj\Debug\MetaDomingoDatabase.dll
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\obj\Debug\MetaDomingoDatabase.pdb
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\bin\Debug\MetaDomingoDatabase.dll
-D:\Development\Repos\MetaDRWManager\MetaDRWManagerSolution\MetaDRWManager\MetaDomingoDatabase\bin\Debug\MetaDomingoDatabase.pdb
