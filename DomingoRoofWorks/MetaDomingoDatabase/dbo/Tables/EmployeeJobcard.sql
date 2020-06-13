@@ -3,7 +3,7 @@
 	[EmployeeJobcardId]     NVARCHAR(450) NOT NULL,
     [EmployeeId]            NVARCHAR(450) NOT NULL,
     [CreatedBy]             NVARCHAR(450) NOT NULL,
-    [CreatedAt]             DATETIME2 NOT NULL DEFAULT GetDate(), 
+    [CreatedAt]             DATETIME2 NOT NULL, 
     [AssignedStartDate]     DATETIME2 NOT NULL, 
     [AssignedEndDate]       DATETIME2 NULL DEFAULT NULL, 
     CONSTRAINT [PK_EmployeeJobcard] PRIMARY KEY CLUSTERED ([EmployeeJobcardId] ASC),

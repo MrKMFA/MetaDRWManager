@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[CustomerInvoice] (
     [CustomerInvoiceId]  NVARCHAR (450)  NOT NULL,
     [HasChild]           NVARCHAR (MAX)  NULL DEFAULT NULL,
-    [CreatedAt]          DATETIME2 (7)   NOT NULL DEFAULT GetDate(),
+    [CreatedAt]          DATETIME2 (7)   NOT NULL,
     [CustomerId]         NVARCHAR (450)  NOT NULL,
     [Discount]           DECIMAL (18, 2) NOT NULL,
     [DueDate]            DATETIME2 (7)   NOT NULL,

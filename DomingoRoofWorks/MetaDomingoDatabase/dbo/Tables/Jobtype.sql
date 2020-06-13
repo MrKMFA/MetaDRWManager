@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Jobtype]
 (
 	[JobtypeId]          NVARCHAR (450)  NOT NULL,
-    [CreatedAt]          DATETIME2 (7)   NOT NULL DEFAULT GetDate(),
+    [CreatedAt]          DATETIME2 (7)   NOT NULL,
     [CurrencyId]         NVARCHAR (450)  NOT NULL,
     [JobtypeDescription] NVARCHAR (MAX)  NOT NULL,
     [JobtypeName]        NVARCHAR (MAX)  NOT NULL,

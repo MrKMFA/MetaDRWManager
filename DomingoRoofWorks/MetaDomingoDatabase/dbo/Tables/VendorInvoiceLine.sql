@@ -2,7 +2,7 @@
     [VendorInvoiceLineId] NVARCHAR (450)  NOT NULL,
     [VendorInvoiceId]     NVARCHAR (450)  NOT NULL,
     [Amount]              DECIMAL (18, 2) NOT NULL,
-    [CreatedAt]           DATETIME2 (7)   NOT NULL DEFAULT GetDate(),
+    [CreatedAt]           DATETIME2 (7)   NOT NULL,
     [Description]         NVARCHAR (MAX)  NULL DEFAULT NULL,
     [ItemId]              NVARCHAR (450)  NOT NULL,
     [Price]               DECIMAL (18, 2) NOT NULL,

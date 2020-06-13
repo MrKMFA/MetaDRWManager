@@ -2,7 +2,7 @@
 (
 	[JobcardId]     NVARCHAR(450) NOT NULL, 
     [CreatedBy]     NVARCHAR(450) NOT NULL,
-    [CreatedAt]     DATETIME2 NOT NULL DEFAULT GetDate(),
+    [CreatedAt]     DATETIME2 NOT NULL,
     [CustomerId]    NVARCHAR(450) NOT NULL, 
     [JobtypeId]     NVARCHAR(450) NOT NULL, 
     [StartDate]     DATETIME2 NOT NULL, 

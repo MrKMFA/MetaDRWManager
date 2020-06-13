@@ -7,7 +7,7 @@
     [CityId]                NVARCHAR(450) NOT NULL, 
     [PostCode]              NVARCHAR(5) NOT NULL,
     [ContactName]           NVARCHAR (MAX) NOT NULL,
-    [CreatedAt]             DATETIME2 (7)  NOT NULL DEFAULT GetDate(),
+    [CreatedAt]             DATETIME2 (7)  NOT NULL,
     [CustomerFName]         NVARCHAR (MAX) NOT NULL,
     [CustomerSName]         NVARCHAR (MAX) NOT NULL,
     [Email]                 NVARCHAR (MAX) NOT NULL,

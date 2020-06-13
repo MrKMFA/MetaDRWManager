@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Item]
 (
 	[ItemId]          NVARCHAR (450)  NOT NULL,
-    [CreatedAt]       DATETIME2 (7)   NOT NULL DEFAULT GetDate(),
+    [CreatedAt]       DATETIME2 (7)   NOT NULL,
     [CurrencyId]      NVARCHAR (450)  NOT NULL,
     [ItemDescription] NVARCHAR (MAX)  NOT NULL,
     [ItemName]        NVARCHAR (MAX)  NOT NULL,

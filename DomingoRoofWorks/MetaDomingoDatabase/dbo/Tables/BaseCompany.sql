@@ -8,7 +8,7 @@
     [AddressLine2]          NVARCHAR(MAX) NULL DEFAULT NULL, 
     [CityId]                NVARCHAR(450) NOT NULL, 
     [PostCode]              NVARCHAR(5) NOT NULL,
-    [CreatedAt]             DATETIME2 (7)  NOT NULL DEFAULT GetDate(),
+    [CreatedAt]             DATETIME2 (7)  NOT NULL ,
     [Email]                 NVARCHAR (MAX) NOT NULL,
     [Fax]                   NVARCHAR (MAX) NULL DEFAULT NULL,
     [Phone]                 NVARCHAR (MAX) NOT NULL,
