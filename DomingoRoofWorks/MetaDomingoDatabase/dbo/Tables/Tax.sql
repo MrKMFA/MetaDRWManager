@@ -3,6 +3,6 @@
 	[TaxId]     NVARCHAR (450) NOT NULL,
     [CreatedAt] DATETIME2 (7)  NOT NULL,
     [TaxLabel]  NVARCHAR (MAX) NOT NULL,
-    [TaxRate]   DECIMAL (3,2)  NOT NULL DEFAULT 1.15,
+    [TaxPerc]   DECIMAL (3,2)  NOT NULL DEFAULT 1.15,
     CONSTRAINT [PK_Tax] PRIMARY KEY CLUSTERED ([TaxId] ASC)
 )

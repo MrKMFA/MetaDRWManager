@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[BaseCompany]
 (
-	[BaseCompanyId]           NVARCHAR (450) NOT NULL,
+	[BaseCompanyId]         NVARCHAR (450) NOT NULL,
     [AdditionalInformation] NVARCHAR (MAX) NULL DEFAULT NULL,
     [CompanyName]           NVARCHAR (MAX) NOT NULL,
     [ContactName]           NVARCHAR (MAX) NOT NULL,
@@ -14,7 +14,7 @@
     [Phone]                 NVARCHAR (MAX) NOT NULL,
     [TaxRegisteredNumber]   NVARCHAR (MAX) NULL DEFAULT NULL,
     [Website]               NVARCHAR (MAX) NULL DEFAULT NULL,
-    [LastUpdated] DATETIME2 NOT NULL, 
+    [LastUpdated]           DATETIME2 NOT NULL, 
     CONSTRAINT [PK_BaseCompany] PRIMARY KEY CLUSTERED ([BaseCompanyId] ASC),
     CONSTRAINT [FK_BaseCompany_City_CityId] FOREIGN KEY ([CityId]) REFERENCES City([CityId])
 )

@@ -5,4 +5,4 @@
     [CityCode]  NVARCHAR(MAX) NOT NULL, 
     [CityName]  NVARCHAR(MAX) NOT NULL,
     CONSTRAINT [PK_City] PRIMARY KEY CLUSTERED ([CityId] ASC)
-)
+);

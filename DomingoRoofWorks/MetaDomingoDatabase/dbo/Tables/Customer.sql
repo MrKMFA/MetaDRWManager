@@ -17,4 +17,4 @@
     [Website]               NVARCHAR (MAX) NULL DEFAULT NULL,
     CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED ([CustomerId] ASC),
     CONSTRAINT [FK_Customer_City_CityId] FOREIGN KEY ([CityId]) REFERENCES City([CityId])
-)
+);
