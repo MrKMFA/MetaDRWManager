@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/17
+//Last Updated: 2020/06/19
 
 using MetaDomingoLibrary.Models.Base;
 using System;
@@ -10,12 +10,15 @@ namespace MetaDomingoLibrary.Models.Derived
 {
     public class City : LookUp
     {
-        // Private Fields
+        // *** Private Fields ***
         private string cityId;
         private string cityCode;
         private string cityName;
 
-        // Constructors
+
+
+        // *** Constructors ***
+        //-Used when instantiating default object and included base class
         public City() : base()
         {
             cityId = "CTY" + DateTime.UtcNow.Date.Year.ToString() +
@@ -23,16 +26,35 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
         }
 
-        // Properties
+        //-Used when instantiating default object (and base class) with initializing property values
+        public City(string cCode, string cName)
+            : base()
+        {
+            cityId = "CTY" + DateTime.UtcNow.Date.Year.ToString() +
+                DateTime.UtcNow.Date.Month.ToString() +
+                DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
+            this.cityCode = cCode;
+            this.cityName = cName;
+        }
+
+        //-Used when instantiating objects and initializing with values retrieved from database
+        public City(string cId, string cCode, string cName,
+                    DateTime createdAt, DateTime modified)
+            : base(createdAt, modified)
+        {
+            this.cityId = cId;
+            this.cityCode = cCode;
+            this.cityName = cName;
+        }
+
+
+
+        // *** Properties ***
         public string CityId
         {
             get
             {
                 return this.cityId;
-            }
-            set
-            {
-                this.cityId = value;
             }
         }
 
