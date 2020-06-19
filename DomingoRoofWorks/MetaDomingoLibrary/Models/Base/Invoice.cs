@@ -78,6 +78,27 @@ namespace MetaDomingoLibrary.Models.Base
                         string invRef, bool paid, InternalCompany internalCompany,
                         string note, string terms, decimal itemsValue,
                         decimal delivery, decimal discount, Tax tax,
+                        DateTime createdAt, DateTime modified)
+            : base(createdAt, modified)
+        {
+            invoiceId = invId;
+            this.invoicedDate = invDate;
+            this.dueDate = due;
+            this.invoiceRef = invRef;
+            this.isPaid = paid;
+            this.internalCompany = internalCompany;
+            this.noteToRecipient = note;
+            this.termsAndConditions = terms;
+            this.itemsValue = itemsValue;
+            this.delivery = delivery;
+            this.discount = discount;
+            this.tax = tax;
+        }
+
+        public Invoice(string invId, DateTime invDate, DateTime due,
+                        string invRef, bool paid, InternalCompany internalCompany,
+                        string note, string terms, decimal itemsValue,
+                        decimal delivery, decimal discount, Tax tax,
                         decimal subTot, decimal taxAmt, decimal grandTot,
                         DateTime createdAt, DateTime modified)
             : base(createdAt, modified)

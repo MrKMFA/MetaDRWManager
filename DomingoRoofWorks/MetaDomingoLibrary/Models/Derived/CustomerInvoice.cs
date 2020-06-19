@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/17
+//Last Updated: 2020/06/20
 
 using MetaDomingoLibrary.Models.Base;
 using System;
@@ -10,11 +10,15 @@ namespace MetaDomingoLibrary.Models.Derived
 {
     public class CustomerInvoice : Invoice
     {
-        // Private Fields
+        // *** Private Fields ***
         private string customerInvoiceId;
         private Customer customer;
+        private Invoice invoice;
 
-        // Constructors
+
+
+        // *** Constructors ***
+        //-Used when instantiating default object and included base class
         public CustomerInvoice() : base()
         {
             customerInvoiceId = "CNV" + DateTime.UtcNow.Date.Year.ToString() +
@@ -22,11 +26,9 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
         }
 
-        public CustomerInvoice(Customer customer,
-            string invRef, bool paid, InternalCompany baseCompany,
-            string note, string terms, decimal delivery,
-            decimal discount, decimal subTot, Tax tax)
-            : base(invRef, paid, baseCompany, note, terms, delivery, discount, subTot, tax)
+        //-Used when instantiating default object (and base class) with initializing property values
+        public CustomerInvoice(Customer customer)
+            : base()
         {
             customerInvoiceId = "CNV" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
@@ -35,7 +37,57 @@ namespace MetaDomingoLibrary.Models.Derived
             this.customer = customer;
         }
 
-        // Properties
+        public CustomerInvoice(Customer cust, DateTime invDate, string invRef, bool paid,
+                        InternalCompany internalCompany, string note, string terms,
+                        decimal itemsValue, decimal delivery, decimal discount, Tax tax)
+            : base(invDate, invRef, paid, internalCompany, note, terms, itemsValue, delivery, discount, tax)
+        {
+            customerInvoiceId = "CNV" + DateTime.UtcNow.Date.Year.ToString() +
+                DateTime.UtcNow.Date.Month.ToString() +
+                DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
+
+            this.customer = cust;
+        }
+
+        public CustomerInvoice(Customer cust, Invoice inv)
+            : base(inv.InvoicedDate, inv.InvoiceRef, inv.IsPaid, inv.InternalCompany, inv.NoteToRecipient,
+                  inv.TermsAndConditions, inv.ItemsValue, inv.Delivery, inv.Discount, inv.Tax)
+        {
+            customerInvoiceId = "CNV" + DateTime.UtcNow.Date.Year.ToString() +
+                DateTime.UtcNow.Date.Month.ToString() +
+                DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
+
+            this.customer = cust;
+            this.invoice = inv;
+        }
+
+        //-Used when initializing objects with values retrieved from database
+        public CustomerInvoice(string custInvId, Customer cust, string invId,
+                                DateTime invDate, DateTime due, string invRef,
+                                bool paid, InternalCompany internalCompany, string note,
+                                string terms, decimal itemsValue, decimal delivery,
+                                decimal discount, Tax tax, DateTime createdAt,
+                                DateTime modified)
+            : base(invId, invDate, due, invRef, paid, internalCompany, note, terms, itemsValue, delivery,
+                    discount, tax, createdAt, modified)
+        {
+            customerInvoiceId = custInvId;
+            this.customer = cust;
+        }
+
+        public CustomerInvoice(string custInvId, Customer cust, Invoice inv)
+            : base(inv.InvoiceId, inv.InvoicedDate, inv.DueDate, inv.InvoiceRef, inv.IsPaid, inv.InternalCompany,
+                   inv.NoteToRecipient, inv.TermsAndConditions, inv.ItemsValue, inv.Delivery, inv.Discount,
+                   inv.Tax, inv.CreatedAt, inv.ModifiedDate)
+        {
+            customerInvoiceId = custInvId;
+            this.customer = cust;
+            this.invoice = inv;
+        }
+
+
+
+        // *** Properties ***
         public string CustomerInvoiceId
         {
             get
@@ -56,11 +108,15 @@ namespace MetaDomingoLibrary.Models.Derived
             }
         }
 
-        public string CustomerId
+        public Invoice Invoice
         {
             get
             {
-                return this.Customer.CustomerId;
+                return this.invoice;
+            }
+            set
+            {
+                this.invoice = value;
             }
         }
     }

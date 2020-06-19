@@ -14,6 +14,13 @@ namespace MetaDomingoConsole
             Console.WriteLine(kenneth.EntityId);
             Console.WriteLine(kenneth.CreatedAt);
 
+            CustomerInvoice obj = new CustomerInvoice(kenneth);
+            Console.WriteLine(obj.CustomerInvoiceId);
+            Console.WriteLine(obj.InvoiceId);
+            Console.WriteLine(obj.Customer.CustomerId);
+            Console.WriteLine(obj.CreatedAt);
+            Console.WriteLine(obj.ModifiedDate);
+
             Console.ReadLine();
         }
     }
