@@ -11,8 +11,11 @@ namespace MetaDomingoLibrary.Models.Base
     {
         // *** Private Fields ***
         private string personId;
+        private string entityId;
         private string firstName;
         private string lastName;
+        private DateTime createdAt;
+        private DateTime modifiedDate;
 
 
 
@@ -26,6 +29,8 @@ namespace MetaDomingoLibrary.Models.Base
             personId = "PRN" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
+            this.createdAt = DateTime.UtcNow;
+            this.modifiedDate = DateTime.UtcNow;
         }
 
         //-Used when instantiating default object (and base class) with initializing property values
@@ -40,10 +45,24 @@ namespace MetaDomingoLibrary.Models.Base
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
             firstName = fName;
             lastName = lName;
+            this.createdAt = DateTime.UtcNow;
+            this.modifiedDate = DateTime.UtcNow;
         }
 
         //-Used when initializing objects with values retrieved from database
-        //TODO:
+        public Person(string perId, string lName, string fName,
+                        DateTime cDate, DateTime mDate, BusinessEntity bEntity)
+            : base(bEntity.EntityId, bEntity.ContactName, bEntity.Email, bEntity.Phone, bEntity.TaxRegistrationNumber,
+                  bEntity.WebsiteUrl, bEntity.AddressLine1, bEntity.AddressLine2, bEntity.CityId, bEntity.PostCode,
+                  bEntity.AdditionalInfo, bEntity.CreatedAt, bEntity.ModifiedDate)
+        {
+            personId = perId;
+            entityId = bEntity.EntityId;
+            firstName = fName;
+            lastName = lName;
+            this.createdAt = cDate;
+            this.modifiedDate = mDate;
+        }
 
 
 
@@ -77,6 +96,29 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.lastName = value;
+            }
+        }
+
+        //Creation and Modified Date Local to Person object not 
+        // BusinessEntity
+        public DateTime CreatedAt
+        {
+            get
+            {
+                return this.createdAt;
+            }
+        }
+
+        public DateTime ModifiedDate
+        {
+            get
+            {
+                return this.modifiedDate;
+            }
+
+            set
+            {
+                this.modifiedDate = value;
             }
         }
     }
