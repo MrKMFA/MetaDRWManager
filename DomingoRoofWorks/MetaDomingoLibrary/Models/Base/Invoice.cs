@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/17
+//Last Updated: 2020/06/19
 
 using MetaDomingoLibrary.Models.Derived;
 using System;
@@ -16,8 +16,8 @@ namespace MetaDomingoLibrary.Models.Base
         private DateTime invoiceDate;
         private string invoiceRef;
         private bool isPaid;
-        private string baseCompanyId;
-        private InternalCompany baseCompany;
+        private string internalCompanyId;
+        private InternalCompany internalCompany;
         private string noteToRecipient;
         private string termsAndConditions;
         private decimal delivery;
@@ -27,7 +27,13 @@ namespace MetaDomingoLibrary.Models.Base
         private decimal taxAmount;
         private decimal grandTotal;
 
+
+
+        //-----------------------------
+        // !!! NB: Abstract Class !!!
+        //-----------------------------
         // *** Constructors ***
+        //-Used when instantiating default object and included base class
         public Invoice() : base()
         {
             invoiceId = "INV" + DateTime.UtcNow.Date.Year.ToString() +
@@ -41,7 +47,11 @@ namespace MetaDomingoLibrary.Models.Base
             subTotal = 0;
         }
 
-        public Invoice(string invRef, bool paid, InternalCompany baseCompany,
+        //-Used when instantiating default object (and base class) with initializing property values
+        //TODO:
+
+        //-Used when initializing objects with values retrieved from database
+        public Invoice(string invRef, bool paid, InternalCompany internalCompany,
             string note, string terms, decimal delivery,
             decimal discount, decimal subTot, Tax tax) : base()
         {
@@ -52,7 +62,7 @@ namespace MetaDomingoLibrary.Models.Base
             invoiceDate = CreatedAt;
             invoiceRef = invRef;
             isPaid = paid;
-            this.baseCompany = baseCompany;
+            this.internalCompany = internalCompany;
             noteToRecipient = note;
             termsAndConditions = terms;
             this.delivery = delivery;
@@ -118,23 +128,23 @@ namespace MetaDomingoLibrary.Models.Base
             }
         }
 
-        public string BaseCompanyId
+        public string InternalCompanyId
         {
             get
             {
-                return this.baseCompany.BaseCompanyId;
+                return this.internalCompany.InternalCompanyId;
             }
         }
 
-        public InternalCompany BaseCompany
+        public InternalCompany InternalCompany
         {
             get
             {
-                return this.baseCompany;
+                return this.internalCompany;
             }
             set
             {
-                this.baseCompany = value;
+                this.internalCompany = value;
             }
         }
 

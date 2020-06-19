@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/17
+//Last Updated: 2020/06/19
 
 using System;
 
@@ -13,21 +13,26 @@ namespace MetaDomingoLibrary.Models.Base
         private DateTime createdAt;
         private DateTime modifiedDate;
 
-        // *** Constructors ***
 
-        //Used when creating new object
+        //-----------------------------
+        // !!! NB: Abstract Class !!!
+        //-----------------------------
+        // *** Constructors ***
+        //-Used when creating default object
         public LookUp()
         {
             this.createdAt = DateTime.UtcNow;
             this.modifiedDate = DateTime.UtcNow;
         }
 
-        //Used when creating object with values retrieved from database
+        //-Used when creating object with values retrieved from database
         public LookUp(DateTime created, DateTime modified)
         {
             this.createdAt = created;
             this.modifiedDate = modified;
         }
+
+
 
         // *** Properties ***
         public DateTime CreatedAt

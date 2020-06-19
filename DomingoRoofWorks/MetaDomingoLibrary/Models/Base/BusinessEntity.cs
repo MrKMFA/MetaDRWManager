@@ -22,9 +22,12 @@ namespace MetaDomingoLibrary.Models.Base
         private string postCode;
         private string additionalInfo;
 
-        // *** Constructors ***
 
-        //Used when creating new object
+        //-----------------------------
+        // !!! NB: Abstract Class !!!
+        //-----------------------------
+        // *** Constructors ***
+        //-Used when creating default object
         public BusinessEntity() : base()
         {
             entityId = "ENT" + DateTime.UtcNow.Date.Year.ToString() +
@@ -32,11 +35,33 @@ namespace MetaDomingoLibrary.Models.Base
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
         }
 
-        //Used when initializing objects with values retrieved from database
+        //-Used when initializing default object
+        public BusinessEntity(string conName, string email,
+                                string phone, string taxNum, string webUrl,
+                                string addrLine1, string addrLine2, string cityId,
+                                string postCode, string addInfo)
+            : base()
+        {
+            entityId = "ENT" + DateTime.UtcNow.Date.Year.ToString() +
+                DateTime.UtcNow.Date.Month.ToString() +
+                DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
+            contactName = conName;
+            this.email = email;
+            this.phone = phone;
+            taxRegistrationNumber = taxNum;
+            websiteUrl = webUrl;
+            addressLine1 = addrLine1;
+            addressLine2 = addrLine2;
+            this.cityId = cityId;
+            this.postCode = postCode;
+            additionalInfo = addInfo;
+        }
+
+        //-Used when initializing objects with values retrieved from database
         public BusinessEntity(string eId, string cName, string email,
-            string phone, string taxNum, string webUrl,
-            string addrLine1, string addrLine2, string cityId,
-            string postCode, string addInfo, DateTime created, DateTime modified)
+                                string phone, string taxNum, string webUrl,
+                                string addrLine1, string addrLine2, string cityId,
+                                string postCode, string addInfo, DateTime created, DateTime modified) 
             : base(created, modified)
         {
             entityId = eId;
@@ -51,6 +76,8 @@ namespace MetaDomingoLibrary.Models.Base
             this.postCode = postCode;
             additionalInfo = addInfo;
         }
+
+
 
         // *** Properties ***
         public string EntityId
