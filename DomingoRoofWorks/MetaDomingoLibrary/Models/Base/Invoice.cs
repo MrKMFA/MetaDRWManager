@@ -3,6 +3,7 @@
 //Description:
 //Last Updated: 2020/06/17
 
+using MetaDomingoLibrary.Models.Derived;
 using System;
 
 namespace MetaDomingoLibrary.Models.Base

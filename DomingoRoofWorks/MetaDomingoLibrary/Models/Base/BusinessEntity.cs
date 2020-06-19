@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/17
+//Last Updated: 2020/06/19
 
 using System;
 
@@ -32,7 +32,7 @@ namespace MetaDomingoLibrary.Models.Base
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
         }
 
-        //Used when creating object with values retrieved from database
+        //Used when initializing objects with values retrieved from database
         public BusinessEntity(string eId, string cName, string email,
             string phone, string taxNum, string webUrl,
             string addrLine1, string addrLine2, string cityId,

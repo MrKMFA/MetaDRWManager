@@ -61,6 +61,7 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Functions" />
     <Folder Include="Publish Locations" />
+    <Folder Include="dbo\Tables\New" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Currency.sql" />
@@ -81,6 +82,8 @@
     <Build Include="dbo\Tables\City.sql" />
     <Build Include="dbo\Functions\udfGetJobcardMaterials.sql" />
     <Build Include="dbo\Functions\udfGetJobcardEmployees.sql" />
+    <Build Include="dbo\Tables\New\BusinessEntity.sql" />
+    <Build Include="dbo\Tables\New\Person.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
