@@ -12,18 +12,18 @@ namespace MetaDomingoLibrary.Models.Base
     {
         // *** Private Fields ***
         private string invoiceId;
+        private DateTime invoicedDate;
         private DateTime dueDate;
-        private DateTime invoiceDate;
         private string invoiceRef;
         private bool isPaid;
-        private string internalCompanyId;
         private InternalCompany internalCompany;
         private string noteToRecipient;
         private string termsAndConditions;
+        private Tax tax;
+        private decimal itemsValue;
         private decimal delivery;
         private decimal discount;
         private decimal subTotal;
-        private Tax tax;
         private decimal taxAmount;
         private decimal grandTotal;
 
@@ -39,37 +39,67 @@ namespace MetaDomingoLibrary.Models.Base
             invoiceId = "INV" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
-            dueDate = CreatedAt.AddMonths(1);
-            invoiceDate = CreatedAt;
+            invoicedDate = DateTime.UtcNow;
+            dueDate = invoicedDate.AddMonths(1);
             isPaid = false;
+            itemsValue = 0;
             delivery = 0;
             discount = 0;
             subTotal = 0;
+            taxAmount = 0;
+            grandTotal = 0;
         }
 
         //-Used when instantiating default object (and base class) with initializing property values
-        //TODO:
-
-        //-Used when initializing objects with values retrieved from database
-        public Invoice(string invRef, bool paid, InternalCompany internalCompany,
-            string note, string terms, decimal delivery,
-            decimal discount, decimal subTot, Tax tax) : base()
+        public Invoice(DateTime invDate, string invRef, bool paid,
+                        InternalCompany internalCompany, string note, string terms,
+                        decimal itemsValue, decimal delivery, decimal discount, Tax tax)
+            : base()
         {
             invoiceId = "INV" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
-            dueDate = CreatedAt.AddMonths(1);
-            invoiceDate = CreatedAt;
-            invoiceRef = invRef;
-            isPaid = paid;
+
+            this.invoicedDate = invDate;
+            this.dueDate = invDate.AddMonths(1);
+            this.invoiceRef = invRef;
+            this.isPaid = paid;
             this.internalCompany = internalCompany;
-            noteToRecipient = note;
-            termsAndConditions = terms;
+            this.noteToRecipient = note;
+            this.termsAndConditions = terms;
+            this.itemsValue = itemsValue;
             this.delivery = delivery;
             this.discount = discount;
-            subTotal = subTot;
             this.tax = tax;
         }
+
+        //-Used when initializing objects with values retrieved from database
+        public Invoice(string invId, DateTime invDate, DateTime due,
+                        string invRef, bool paid, InternalCompany internalCompany,
+                        string note, string terms, decimal itemsValue,
+                        decimal delivery, decimal discount, Tax tax,
+                        decimal subTot, decimal taxAmt, decimal grandTot,
+                        DateTime createdAt, DateTime modified)
+            : base(createdAt, modified)
+        {
+            invoiceId = invId;
+            this.invoicedDate = invDate;
+            this.dueDate = due;
+            this.invoiceRef = invRef;
+            this.isPaid = paid;
+            this.internalCompany = internalCompany;
+            this.noteToRecipient = note;
+            this.termsAndConditions = terms;
+            this.itemsValue = itemsValue;
+            this.delivery = delivery;
+            this.discount = discount;
+            this.tax = tax;
+            this.subTotal = subTot;
+            this.taxAmount = taxAmt;
+            this.grandTotal = grandTot;
+        }
+
+
 
         // *** Properties ***
         public string InvoiceId
@@ -80,27 +110,29 @@ namespace MetaDomingoLibrary.Models.Base
             }
         }
 
+        public DateTime InvoicedDate
+        {
+            get
+            {
+                return this.invoicedDate;
+            }
+            set
+            {
+                this.invoicedDate = value;
+                base.ModifiedDate = DateTime.UtcNow;
+            }
+        }
+
         public DateTime DueDate
         {
             get
             {
-                return this.dueDate;
+                return InvoicedDate.AddMonths(1);
             }
             set
             {
                 this.dueDate = value;
-            }
-        }
-
-        public DateTime InvoiceDate
-        {
-            get
-            {
-                return this.invoiceDate;
-            }
-            set
-            {
-                this.invoiceDate = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -113,6 +145,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.invoiceRef = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -125,14 +158,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.isPaid = value;
-            }
-        }
-
-        public string InternalCompanyId
-        {
-            get
-            {
-                return this.internalCompany.InternalCompanyId;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -145,6 +171,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.internalCompany = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -157,6 +184,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.noteToRecipient = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -169,6 +197,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.termsAndConditions = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -181,6 +210,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.delivery = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -193,6 +223,20 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.discount = value;
+                base.ModifiedDate = DateTime.UtcNow;
+            }
+        }
+
+        public decimal ItemsValue
+        {
+            get
+            {
+                return this.itemsValue;
+            }
+            set
+            {
+                this.itemsValue = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -200,19 +244,12 @@ namespace MetaDomingoLibrary.Models.Base
         {
             get
             {
-                return this.subTotal;
+                return (ItemsValue + Delivery - Discount);
             }
             set
             {
-                this.subTotal = value - this.Discount;
-            }
-        }
-
-        public string TaxId
-        {
-            get
-            {
-                return this.Tax.TaxId;
+                this.subTotal = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -225,6 +262,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.tax = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -232,11 +270,12 @@ namespace MetaDomingoLibrary.Models.Base
         {
             get
             {
-                return this.taxAmount;
+                return (Subtotal * Tax.TaxPerc);
             }
             set
             {
                 this.taxAmount = this.Subtotal * this.Tax.TaxPerc;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -244,11 +283,12 @@ namespace MetaDomingoLibrary.Models.Base
         {
             get
             {
-                return this.grandTotal;
+                return (Subtotal + TaxAmount);
             }
             set
             {
                 this.grandTotal = this.Subtotal + this.TaxAmount;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
     }
