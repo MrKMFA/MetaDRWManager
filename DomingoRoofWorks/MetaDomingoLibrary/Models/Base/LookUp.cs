@@ -41,10 +41,6 @@ namespace MetaDomingoLibrary.Models.Base
             {
                 return this.createdAt;
             }
-            set
-            {
-                this.createdAt = value;
-            }
         }
 
         public DateTime ModifiedDate

@@ -57,7 +57,7 @@ namespace MetaDomingoLibrary.Models.Base
             additionalInfo = addInfo;
         }
 
-        //-Used when initializing objects with values retrieved from database
+        //-Used when instantiating objects and initializing with values retrieved from database
         public BusinessEntity(string eId, string cName, string email,
                                 string phone, string taxNum, string webUrl,
                                 string addrLine1, string addrLine2, string cityId,

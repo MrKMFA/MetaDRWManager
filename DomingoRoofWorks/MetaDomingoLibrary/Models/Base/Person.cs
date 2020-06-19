@@ -12,6 +12,7 @@ namespace MetaDomingoLibrary.Models.Base
         // *** Private Fields ***
         private string personId;
         private string entityId;
+        private BusinessEntity entity;
         private string firstName;
         private string lastName;
         private DateTime createdAt;
@@ -49,7 +50,7 @@ namespace MetaDomingoLibrary.Models.Base
             this.modifiedDate = DateTime.UtcNow;
         }
 
-        //-Used when initializing objects with values retrieved from database
+        //-Used when instantiating objects and initializing with values retrieved from database
         public Person(string perId, string lName, string fName,
                         DateTime cDate, DateTime mDate, BusinessEntity bEntity)
             : base(bEntity.EntityId, bEntity.ContactName, bEntity.Email, bEntity.Phone, bEntity.TaxRegistrationNumber,
@@ -58,6 +59,7 @@ namespace MetaDomingoLibrary.Models.Base
         {
             personId = perId;
             entityId = bEntity.EntityId;
+            this.entity = bEntity;
             firstName = fName;
             lastName = lName;
             this.createdAt = cDate;
@@ -75,6 +77,14 @@ namespace MetaDomingoLibrary.Models.Base
             }
         }
 
+        public BusinessEntity Entity
+        {
+            get
+            {
+                return this.Entity;
+            }
+        }
+
         public string FirstName
         {
             get
@@ -84,6 +94,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.firstName = value;
+                this.modifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -96,6 +107,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.lastName = value;
+                this.modifiedDate = DateTime.UtcNow;
             }
         }
 
