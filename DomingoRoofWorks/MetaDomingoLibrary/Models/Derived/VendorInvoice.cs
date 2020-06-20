@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace MetaDomingoLibrary.Models.Derived
 {
-    class VendorInvoice : Invoice
+    public class VendorInvoice : Invoice
     {
         // *** Private Fields ***
         private string vendorInvoiceId;
