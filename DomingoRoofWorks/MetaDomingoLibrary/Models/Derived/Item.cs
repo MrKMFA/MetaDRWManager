@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/17
+//Last Updated: 2020/06/20
 
 using MetaDomingoLibrary.Models.Base;
 using System;
@@ -10,19 +10,23 @@ namespace MetaDomingoLibrary.Models.Derived
 {
     public class Item : LookUp
     {
-        // Private Fields
+        // *** Private Fields ***
         private string itemId;
         private string itemName;
         private string itemDescription;
-        private string vendorId;
         private Vendor vendor;
         private bool preferredVendor;
         private decimal costPrice;
-        private decimal unitPrice;
         private decimal markupPerc;
+        private decimal unitPrice;
+        
 
-        // Constructors
-        public Item(string name, string vendorId, decimal cost, decimal markup = 1.15M,
+
+
+        // *** Constructors ***
+        //-Used when instantiating default object and included base class
+        //-Used when instantiating default object (and base class) with initializing property values
+        public Item(string name, decimal cost, decimal markup = 1.15M,
             string desc = null, bool preferred = true, Vendor vendor = null)
             : base()
         {
@@ -30,16 +34,46 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Month.ToString() +
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
             this.itemName = name;
-            this.vendorId = vendorId;
             this.itemDescription = desc;
             this.vendor = vendor;
             this.preferredVendor = preferred;
             this.costPrice = cost;
             this.markupPerc = markup;
-            this.unitPrice = this.costPrice * this.markupPerc;
         }
 
-        // Properties
+        //-Used when instantiating objects and initializing with values retrieved from database
+        public Item(string itemId, string name, string desc,
+                    Vendor vendor, bool preferred, decimal cost,
+                    decimal markup, DateTime created, DateTime modified)
+            : base(created, modified)
+        {
+            this.itemId = itemId;
+            this.itemName = name;
+            this.itemDescription = desc;
+            this.vendor = vendor;
+            this.preferredVendor = preferred;
+            this.costPrice = cost;
+            this.markupPerc = markup;
+        }
+
+        public Item(string itemId, string name, string desc,
+                    Vendor vendor, bool preferred, decimal cost,
+                    decimal markup, decimal unitPrice, DateTime created, DateTime modified)
+            : base(created, modified)
+        {
+            this.itemId = itemId;
+            this.itemName = name;
+            this.itemDescription = desc;
+            this.vendor = vendor;
+            this.preferredVendor = preferred;
+            this.costPrice = cost;
+            this.markupPerc = markup;
+            this.unitPrice = unitPrice;
+        }
+
+
+
+        // *** Properties ***
         public string ItemId
         {
             get
@@ -57,6 +91,7 @@ namespace MetaDomingoLibrary.Models.Derived
             set
             {
                 this.itemName = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -69,18 +104,7 @@ namespace MetaDomingoLibrary.Models.Derived
             set
             {
                 this.itemDescription = value;
-            }
-        }
-
-        public string VendorId
-        {
-            get
-            {
-                return this.vendor.VendorId;
-            }
-            set
-            {
-                this.vendorId = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -93,6 +117,7 @@ namespace MetaDomingoLibrary.Models.Derived
             set
             {
                 this.vendor = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -105,6 +130,7 @@ namespace MetaDomingoLibrary.Models.Derived
             set
             {
                 this.preferredVendor = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -117,6 +143,7 @@ namespace MetaDomingoLibrary.Models.Derived
             set
             {
                 this.costPrice = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -129,6 +156,7 @@ namespace MetaDomingoLibrary.Models.Derived
             set
             {
                 this.markupPerc = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -136,11 +164,12 @@ namespace MetaDomingoLibrary.Models.Derived
         {
             get
             {
-                return this.unitPrice;
+                return CostPrice + (CostPrice * MarkupPerc);
             }
             set
             {
-                this.unitPrice = CostPrice * MarkupPerc;
+                this.unitPrice = value;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
     }
