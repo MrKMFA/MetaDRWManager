@@ -62,30 +62,33 @@
     <Folder Include="dbo\Functions" />
     <Folder Include="Publish Locations" />
     <Folder Include="dbo\Tables\New" />
+    <Folder Include="dbo\Tables\Old" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Currency.sql" />
-    <Build Include="dbo\Tables\Customer.sql" />
-    <Build Include="dbo\Tables\BaseCompany.sql" />
-    <Build Include="dbo\Tables\Tax.sql" />
-    <Build Include="dbo\Tables\Vendor.sql" />
-    <Build Include="dbo\Tables\Item.sql" />
-    <Build Include="dbo\Tables\CustomerInvoice.sql" />
-    <Build Include="dbo\Tables\CustomerInvoiceLine.sql" />
-    <Build Include="dbo\Tables\VendorInvoice.sql" />
-    <Build Include="dbo\Tables\VendorInvoiceLine.sql" />
-    <Build Include="dbo\Tables\Employee.sql" />
-    <Build Include="dbo\Tables\Jobtype.sql" />
-    <Build Include="dbo\Tables\Jobcard.sql" />
-    <Build Include="dbo\Tables\JobcardMaterial.sql" />
-    <Build Include="dbo\Tables\EmployeeJobcard.sql" />
-    <Build Include="dbo\Tables\City.sql" />
     <Build Include="dbo\Functions\udfGetJobcardMaterials.sql" />
     <Build Include="dbo\Functions\udfGetJobcardEmployees.sql" />
     <Build Include="dbo\Tables\New\BusinessEntity.sql" />
     <Build Include="dbo\Tables\New\Person.sql" />
+    <Build Include="dbo\Tables\Old\BaseCompany.sql" />
+    <Build Include="dbo\Tables\Old\City.sql" />
+    <Build Include="dbo\Tables\Old\Currency.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Old\Customer.sql" />
+    <Build Include="dbo\Tables\Old\CustomerInvoice.sql" />
+    <Build Include="dbo\Tables\Old\CustomerInvoiceLine.sql" />
+    <Build Include="dbo\Tables\Old\Employee.sql" />
+    <Build Include="dbo\Tables\Old\EmployeeJobcard.sql" />
+    <Build Include="dbo\Tables\Old\Item.sql" />
+    <Build Include="dbo\Tables\Old\Jobcard.sql" />
+    <Build Include="dbo\Tables\Old\JobcardMaterial.sql" />
+    <Build Include="dbo\Tables\Old\Jobtype.sql" />
+    <Build Include="dbo\Tables\Old\Tax.sql" />
+    <Build Include="dbo\Tables\Old\Vendor.sql" />
+    <Build Include="dbo\Tables\Old\VendorInvoice.sql" />
+    <Build Include="dbo\Tables\Old\VendorInvoiceLine.sql" />
   </ItemGroup>
 </Project>
