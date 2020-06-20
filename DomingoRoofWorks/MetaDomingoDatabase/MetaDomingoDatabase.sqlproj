@@ -75,6 +75,7 @@
     <Build Include="dbo\Tables\Customer.sql" />
     <Build Include="dbo\Tables\Vendor.sql" />
     <Build Include="dbo\Tables\CustomerInvoice.sql" />
+    <Build Include="dbo\Tables\VendorInvoice.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
