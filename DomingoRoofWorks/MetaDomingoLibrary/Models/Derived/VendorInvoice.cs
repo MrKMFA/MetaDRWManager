@@ -5,6 +5,7 @@
 
 using MetaDomingoLibrary.Models.Base;
 using System;
+using System.Collections.Generic;
 
 namespace MetaDomingoLibrary.Models.Derived
 {
@@ -38,8 +39,9 @@ namespace MetaDomingoLibrary.Models.Derived
 
         public VendorInvoice(Vendor vendor, DateTime invDate, string invRef, bool paid,
                         InternalCompany internalCompany, string note, string terms,
-                        decimal itemsValue, decimal delivery, decimal discount, Tax tax)
-            : base(invDate, invRef, paid, internalCompany, note, terms, itemsValue, delivery, discount, tax)
+                        decimal itemsValue, decimal delivery, decimal discount,
+                        Tax tax, List<InvoiceItem> items)
+            : base(invDate, invRef, paid, internalCompany, note, terms, itemsValue, delivery, discount, tax, items)
         {
             vendorInvoiceId = "VNV" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
@@ -50,7 +52,7 @@ namespace MetaDomingoLibrary.Models.Derived
 
         public VendorInvoice(Vendor vendor, Invoice inv)
             : base(inv.InvoicedDate, inv.InvoiceRef, inv.IsPaid, inv.InternalCompany, inv.NoteToRecipient,
-                  inv.TermsAndConditions, inv.ItemsValue, inv.Delivery, inv.Discount, inv.Tax)
+                  inv.TermsAndConditions, inv.ItemsValue, inv.Delivery, inv.Discount, inv.Tax, inv.Items)
         {
             vendorInvoiceId = "VNV" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
@@ -66,9 +68,9 @@ namespace MetaDomingoLibrary.Models.Derived
                                 bool paid, InternalCompany internalCompany, string note,
                                 string terms, decimal itemsValue, decimal delivery,
                                 decimal discount, Tax tax, DateTime createdAt,
-                                DateTime modified)
+                                DateTime modified, List<InvoiceItem> items)
             : base(invId, invDate, due, invRef, paid, internalCompany, note, terms, itemsValue, delivery,
-                    discount, tax, createdAt, modified)
+                    discount, tax, items, createdAt, modified)
         {
             vendorInvoiceId = vendInvId;
             this.vendor = vendor;
@@ -77,7 +79,7 @@ namespace MetaDomingoLibrary.Models.Derived
         public VendorInvoice(string vendInvId, Vendor vendor, Invoice inv)
             : base(inv.InvoiceId, inv.InvoicedDate, inv.DueDate, inv.InvoiceRef, inv.IsPaid, inv.InternalCompany,
                    inv.NoteToRecipient, inv.TermsAndConditions, inv.ItemsValue, inv.Delivery, inv.Discount,
-                   inv.Tax, inv.CreatedAt, inv.ModifiedDate)
+                   inv.Tax, inv.Items, inv.CreatedAt, inv.ModifiedDate)
         {
             vendorInvoiceId = vendInvId;
             this.vendor = vendor;
