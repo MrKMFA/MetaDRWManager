@@ -26,7 +26,7 @@ namespace MetaDomingoLibrary.Models.Derived
         // *** Constructors ***
         //-Used when instantiating default object and included base class
         //-Used when instantiating default object (and base class) with initializing property values
-        public Item(string name, decimal cost, decimal markup = 1.15M,
+        public Item(string name, decimal cost, decimal markup = 0.15M,
             string desc = null, bool preferred = true, Vendor vendor = null)
             : base()
         {
