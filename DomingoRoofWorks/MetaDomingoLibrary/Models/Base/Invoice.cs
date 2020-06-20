@@ -5,6 +5,7 @@
 
 using MetaDomingoLibrary.Models.Derived;
 using System;
+using System.Collections.Generic;
 
 namespace MetaDomingoLibrary.Models.Base
 {
@@ -26,6 +27,7 @@ namespace MetaDomingoLibrary.Models.Base
         private decimal subTotal;
         private decimal taxAmount;
         private decimal grandTotal;
+        private List<InvoiceItem> items;
 
 
 
@@ -39,21 +41,23 @@ namespace MetaDomingoLibrary.Models.Base
             invoiceId = "INV" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
-            invoicedDate = DateTime.UtcNow;
-            dueDate = invoicedDate.AddMonths(1);
-            isPaid = false;
-            itemsValue = 0;
-            delivery = 0;
-            discount = 0;
-            subTotal = 0;
-            taxAmount = 0;
-            grandTotal = 0;
+            this.invoicedDate = DateTime.UtcNow;
+            this.dueDate = invoicedDate.AddMonths(1);
+            this.isPaid = false;
+            this.itemsValue = 0;
+            this.delivery = 0;
+            this.discount = 0;
+            this.subTotal = 0;
+            this.taxAmount = 0;
+            this.grandTotal = 0;
+            this.items = new List<InvoiceItem>();
         }
 
         //-Used when instantiating default object (and base class) with initializing property values
         public Invoice(DateTime invDate, string invRef, bool paid,
                         InternalCompany internalCompany, string note, string terms,
-                        decimal itemsValue, decimal delivery, decimal discount, Tax tax)
+                        decimal itemsValue, decimal delivery, decimal discount,
+                        Tax tax, List<InvoiceItem> items)
             : base()
         {
             invoiceId = "INV" + DateTime.UtcNow.Date.Year.ToString() +
@@ -71,6 +75,7 @@ namespace MetaDomingoLibrary.Models.Base
             this.delivery = delivery;
             this.discount = discount;
             this.tax = tax;
+            this.items = items;
         }
 
         //-Used when initializing objects with values retrieved from database
@@ -78,7 +83,7 @@ namespace MetaDomingoLibrary.Models.Base
                         string invRef, bool paid, InternalCompany internalCompany,
                         string note, string terms, decimal itemsValue,
                         decimal delivery, decimal discount, Tax tax,
-                        DateTime createdAt, DateTime modified)
+                        List<InvoiceItem> items, DateTime createdAt, DateTime modified)
             : base(createdAt, modified)
         {
             invoiceId = invId;
@@ -93,6 +98,7 @@ namespace MetaDomingoLibrary.Models.Base
             this.delivery = delivery;
             this.discount = discount;
             this.tax = tax;
+            this.items = items;
         }
 
         public Invoice(string invId, DateTime invDate, DateTime due,
@@ -100,7 +106,7 @@ namespace MetaDomingoLibrary.Models.Base
                         string note, string terms, decimal itemsValue,
                         decimal delivery, decimal discount, Tax tax,
                         decimal subTot, decimal taxAmt, decimal grandTot,
-                        DateTime createdAt, DateTime modified)
+                        List<InvoiceItem> items, DateTime createdAt, DateTime modified)
             : base(createdAt, modified)
         {
             invoiceId = invId;
@@ -118,6 +124,7 @@ namespace MetaDomingoLibrary.Models.Base
             this.subTotal = subTot;
             this.taxAmount = taxAmt;
             this.grandTotal = grandTot;
+            this.items = items;
         }
 
 
@@ -309,6 +316,19 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.grandTotal = this.Subtotal + this.TaxAmount;
+                base.ModifiedDate = DateTime.UtcNow;
+            }
+        }
+
+        public List<InvoiceItem> Items
+        {
+            get
+            {
+                return this.items;
+            }
+            set
+            {
+                this.items = value;
                 base.ModifiedDate = DateTime.UtcNow;
             }
         }
