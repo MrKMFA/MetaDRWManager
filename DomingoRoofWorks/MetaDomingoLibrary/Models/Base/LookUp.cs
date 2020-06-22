@@ -54,5 +54,12 @@ namespace MetaDomingoLibrary.Models.Base
                 this.modifiedDate = value;
             }
         }
+
+        // *** Methods ***
+        public override string ToString()
+        {
+            return "CreatedAt: " + CreatedAt + "\n" +
+                    "ModifiedDate: " + ModifiedDate;
+        }
     }
 }

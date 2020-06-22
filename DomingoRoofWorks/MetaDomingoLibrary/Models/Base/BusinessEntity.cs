@@ -218,5 +218,24 @@ namespace MetaDomingoLibrary.Models.Base
             }
         }
 
+        // *** Methods ***
+
+        public override string ToString()
+        {
+            return
+                "EntityId: " + EntityId + "\n" +
+                "ContactName: " + ContactName + "\n" +
+                "Email: " + Email + "\n" +
+                "Phone: " + Phone + "\n" +
+                "TaxRegNumber: " + TaxRegistrationNumber + "\n" +
+                "WebsiteURL: " + WebsiteUrl + "\n" +
+                "AddressLine1: " + AddressLine1 + "\n" +
+                "AddressLine2: " + AddressLine2 + "\n" +
+                "CityId: " + CityId + "\n" +
+                "PostCode: " + PostCode + "\n" +
+                "AdditionalInfo: " + AdditionalInfo + "\n" +
+                base.ToString();
+        }
+
     }
 }
