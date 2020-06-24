@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/19
+//Last Updated: 2020/06/23
 
 using System;
 
@@ -15,10 +15,6 @@ namespace MetaDomingoLibrary.Models.Base
         private BusinessEntity entity;
         private string firstName;
         private string lastName;
-        private DateTime createdAt;
-        private DateTime modifiedDate;
-
-
 
         //-----------------------------
         // !!! NB: Abstract Class !!!
@@ -30,8 +26,6 @@ namespace MetaDomingoLibrary.Models.Base
             personId = "PRN" + DateTime.UtcNow.Date.Year.ToString() +
                 DateTime.UtcNow.Date.Month.ToString() +
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
-            this.createdAt = DateTime.UtcNow;
-            this.modifiedDate = DateTime.UtcNow;
         }
 
         //-Used when instantiating default object (and base class) with initializing property values
@@ -46,13 +40,10 @@ namespace MetaDomingoLibrary.Models.Base
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
             firstName = fName;
             lastName = lName;
-            this.createdAt = DateTime.UtcNow;
-            this.modifiedDate = DateTime.UtcNow;
         }
 
         //-Used when instantiating objects and initializing with values retrieved from database
-        public Person(string perId, string lName, string fName,
-                        DateTime cDate, DateTime mDate, BusinessEntity bEntity)
+        public Person(string perId, string lName, string fName, BusinessEntity bEntity)
             : base(bEntity.EntityId, bEntity.ContactName, bEntity.Email, bEntity.Phone, bEntity.TaxRegistrationNumber,
                   bEntity.WebsiteUrl, bEntity.AddressLine1, bEntity.AddressLine2, bEntity.CityId, bEntity.PostCode,
                   bEntity.AdditionalInfo, bEntity.CreatedAt, bEntity.ModifiedDate)
@@ -62,8 +53,6 @@ namespace MetaDomingoLibrary.Models.Base
             this.entity = bEntity;
             firstName = fName;
             lastName = lName;
-            this.createdAt = cDate;
-            this.modifiedDate = mDate;
         }
 
 
@@ -94,7 +83,7 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.firstName = value;
-                this.modifiedDate = DateTime.UtcNow;
+                base.ModifiedDate = DateTime.UtcNow;
             }
         }
 
@@ -107,31 +96,17 @@ namespace MetaDomingoLibrary.Models.Base
             set
             {
                 this.lastName = value;
-                this.modifiedDate = DateTime.UtcNow;
+                this.ModifiedDate = DateTime.UtcNow;
             }
         }
 
-        //Creation and Modified Date Local to Person object not 
-        // BusinessEntity
-        public DateTime CreatedAt
+        // *** Methods ***
+        public override string ToString()
         {
-            get
-            {
-                return this.createdAt;
-            }
-        }
-
-        public DateTime ModifiedDate
-        {
-            get
-            {
-                return this.modifiedDate;
-            }
-
-            set
-            {
-                this.modifiedDate = value;
-            }
+            return "PersonId: " + PersonId +"\n"+
+                    "FirstName: " + FirstName +"\n"+
+                    "LastName: " + LastName + "\n"+
+                    base.ToString(); 
         }
     }
 }

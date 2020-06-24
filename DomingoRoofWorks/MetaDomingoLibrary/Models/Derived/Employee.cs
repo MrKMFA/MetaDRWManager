@@ -1,7 +1,7 @@
 ﻿//Author: Kenneth Arnesen
 //Date Created: 2020/06/16
 //Description:
-//Last Updated: 2020/06/19
+//Last Updated: 2020/06/23
 
 using MetaDomingoLibrary.Models.Base;
 using System;
@@ -49,7 +49,7 @@ namespace MetaDomingoLibrary.Models.Derived
 
         //-Used when instantiating objects and initializing with values retrieved from database
         public Employee(string empId, Person person)
-            : base(person.PersonId, person.LastName, person.FirstName, person.CreatedAt, person.ModifiedDate, person.Entity)
+            : base(person.PersonId, person.LastName, person.FirstName, person.Entity)
         {
             this.employeeId = empId;
             this.person = person;
@@ -72,6 +72,12 @@ namespace MetaDomingoLibrary.Models.Derived
             {
                 return this.person;
             }
+        }
+
+        public override string ToString()
+        {
+            return "EmployeeId: " + EmployeeId + "\n"+
+                    base.ToString();
         }
     }
 }

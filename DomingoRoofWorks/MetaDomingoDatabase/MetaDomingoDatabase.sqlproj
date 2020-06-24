@@ -61,6 +61,17 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Functions" />
     <Folder Include="Publish Locations" />
+    <Folder Include="dbo\Stored Procedures\BusinessEntity" />
+    <Folder Include="dbo\Stored Procedures\Person" />
+    <Folder Include="dbo\Stored Procedures\Invoice" />
+    <Folder Include="dbo\Stored Procedures\Currency" />
+    <Folder Include="dbo\Stored Procedures\Jobtype" />
+    <Folder Include="dbo\Stored Procedures\Tax" />
+    <Folder Include="dbo\Stored Procedures\City" />
+    <Folder Include="dbo\Stored Procedures\Person\Customer" />
+    <Folder Include="dbo\Stored Procedures\Person\Employee" />
+    <Folder Include="dbo\Stored Procedures\BusinessEntity\Vendor" />
+    <Folder Include="dbo\Stored Procedures\BusinessEntity\InternalCompany" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Functions\udfGetJobcardMaterials.sql" />
@@ -78,6 +89,10 @@
     <Build Include="dbo\Tables\VendorInvoice.sql" />
     <Build Include="dbo\Tables\Employee.sql" />
     <Build Include="dbo\Tables\InvoiceItem.sql" />
+    <Build Include="dbo\Stored Procedures\BusinessEntity\spBusinessEntity_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Person\spPerson_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Person\Customer\spCustomer_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Person\Employee\spEmployee_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
