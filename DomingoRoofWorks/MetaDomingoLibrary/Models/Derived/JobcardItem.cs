@@ -42,5 +42,55 @@ namespace MetaDomingoLibrary.Models.Derived
         }
 
         // *** Properties ***
+        public string JobcardItemId
+        {
+            get
+            {
+                return this.jobcardItemId;
+            }
+        }
+
+        public string JobcardId
+        {
+            get
+            {
+                return this.jobcardId;
+            }
+            set
+            {
+                this.jobcardId = value;
+            }
+        }
+
+        public string ItemId
+        {
+            get
+            {
+                return this.Item.ItemId;
+            }
+        }
+        public Item Item
+        {
+            get
+            {
+                return this.item;
+            }
+            set
+            {
+                this.item = value;
+            }
+        }
+
+        public int Quantity
+        {
+            get
+            {
+                return this.quantity;
+            }
+            set
+            {
+                this.quantity = value;
+            }
+        }
     }
 }
