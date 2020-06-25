@@ -18,11 +18,28 @@ namespace MetaDomingoLibrary.Models.Derived
 
         // *** Constructors ***
         //-Used when instantiating default object and included base class
-
         //-Used when instantiating default object (and base class) with initializing property values
+        public JobcardItem(string jobcardId, Item item, int quantity) : base()
+        {
+            this.jobcardItemId = "JTM" + DateTime.UtcNow.Date.Year.ToString() +
+                DateTime.UtcNow.Date.Month.ToString() +
+                DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
+
+            this.jobcardId = jobcardId;
+            this.item = item;
+            this.quantity = quantity;
+        }
 
         //-Used when initializing objects with values retrieved from database
-
+        public JobcardItem(string jobcardItemId, string jobcardId, Item item,
+                            int quantity, DateTime createdAt, DateTime modifiedDate)
+            : base(createdAt, modifiedDate)
+        {
+            this.jobcardItemId = jobcardItemId;
+            this.jobcardId = jobcardId;
+            this.item = item;
+            this.quantity = quantity;
+        }
 
         // *** Properties ***
     }
