@@ -88,5 +88,12 @@ namespace MetaDomingoLibrary.Models.Derived
                 return this.entity;
             }
         }
+
+        public override string ToString()
+        {
+            return "VendorId: " + VendorId + "\n" +
+                   "VendorName: " + VendorName + "\n" +
+                   base.ToString();
+        }
     }
 }
