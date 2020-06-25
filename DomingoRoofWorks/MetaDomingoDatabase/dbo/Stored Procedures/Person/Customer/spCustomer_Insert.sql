@@ -33,8 +33,8 @@ BEGIN
 
 			IF @Flag > 0
 				-- Insert customer
-				INSERT INTO [dbo].[Customer](CustomerId, EntityId)
-				VALUES(@CustomerId, @EntityId)
+				INSERT INTO [dbo].[Customer](CustomerId, PersonId)
+				VALUES(@CustomerId, @PersonId)
 					SET @Rowcount = @@ROWCOUNT;
 
 		COMMIT TRANSACTION;
