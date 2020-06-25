@@ -236,5 +236,22 @@ namespace MetaDomingoLibrary.Models.Derived
                 this.employeesAssigned = value;
             }
         }
+
+        public override string ToString()
+        {
+            return "JobcardId: " + JobcardId + "\n" +
+                    "CreatedById: " + CreatedById + "\n" +
+                    "CreatedByName: " + CreatedBy.FirstName + "\n" +
+                    "CustomerId: " + CustomerId + "\n" +
+                    "CustomerFullName: " + Customer.FirstName + " " + Customer.LastName + "\n" +
+                    "JobtypeId: " + JobtypeId + "\n" +
+                    "JobtypeName: " + Jobtype.JobtypeName + "\n" +
+                    "JobDuration: " + JobDuration + "\n" +
+                    "JobStartDate: " + JobStartDate.ToString() + "\n" +
+                    "JobEndDate: " + JobEndDate.ToString() + "\n" +
+                    "Number of Materials: " + Materials.Count + "\n" +
+                    "Number of Assigned Employees: " + EmployeesAssigned.Count + "\n" +
+                    base.ToString();
+        }
     }
 }
