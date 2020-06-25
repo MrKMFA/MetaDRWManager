@@ -76,7 +76,9 @@ namespace MetaDomingoLibrary.Models.Derived
 
         public override string ToString()
         {
-            return "EmployeeId: " + EmployeeId + "\n"+
+            string emp = "EmployeeId: " + EmployeeId;
+
+            return $"{String.Format("{0,20}", emp)}\n" +
                     base.ToString();
         }
     }

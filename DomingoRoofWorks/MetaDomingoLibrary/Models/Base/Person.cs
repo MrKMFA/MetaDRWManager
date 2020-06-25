@@ -103,9 +103,13 @@ namespace MetaDomingoLibrary.Models.Base
         // *** Methods ***
         public override string ToString()
         {
-            return "PersonId: " + PersonId +"\n"+
-                    "FirstName: " + FirstName +"\n"+
-                    "LastName: " + LastName + "\n"+
+            string per = "PersonId: " + PersonId;
+            string fne = "FirstName: " + FirstName;
+            string lne = "LastName: " + LastName;
+
+            return $"{String.Format("{0,20}", per)}\n" +
+                   $"{String.Format("{0,20}", fne)}\n" +
+                   $"{String.Format("{0,20}", lne)}\n" +
                     base.ToString(); 
         }
     }

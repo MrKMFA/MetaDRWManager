@@ -222,18 +222,30 @@ namespace MetaDomingoLibrary.Models.Base
 
         public override string ToString()
         {
+            string ent = "EntityId: " + EntityId;
+            string cname = "ContactName: " + ContactName;
+            string email = "Email: " + Email;
+            string phne = "Phone: " + Phone;
+            string txregnum = "TaxRegNumber: " + TaxRegistrationNumber;
+            string web = "WebsiteURL: " + WebsiteUrl;
+            string ad1 = "AddressLine1: " + AddressLine1;
+            string ad2 = "AddressLine2: " + AddressLine2;
+            string cty = "CityId: " + CityId;
+            string pcde = "PostCode: " + PostCode;
+            string adinfo = "AdditionalInfo: " + AdditionalInfo;
+
             return
-                "EntityId: " + EntityId + "\n" +
-                "ContactName: " + ContactName + "\n" +
-                "Email: " + Email + "\n" +
-                "Phone: " + Phone + "\n" +
-                "TaxRegNumber: " + TaxRegistrationNumber + "\n" +
-                "WebsiteURL: " + WebsiteUrl + "\n" +
-                "AddressLine1: " + AddressLine1 + "\n" +
-                "AddressLine2: " + AddressLine2 + "\n" +
-                "CityId: " + CityId + "\n" +
-                "PostCode: " + PostCode + "\n" +
-                "AdditionalInfo: " + AdditionalInfo + "\n" +
+                $"{String.Format("{0,20}", ent)}\n" +
+                $"{String.Format("{0,20}", cname)}\n" +
+                $"{String.Format("{0,20}", email)}\n" +
+                $"{String.Format("{0,20}", phne)}\n" +
+                $"{String.Format("{0,20}", txregnum)}\n" +
+                $"{String.Format("{0,20}", web)}\n" +
+                $"{String.Format("{0,20}", ad1)}\n" +
+                $"{String.Format("{0,20}", ad2)}\n" +
+                $"{String.Format("{0,20}", cty)}\n" +
+                $"{String.Format("{0,20}", pcde)}\n" +
+                $"{String.Format("{0,20}", adinfo)}\n" +
                 base.ToString();
         }
 

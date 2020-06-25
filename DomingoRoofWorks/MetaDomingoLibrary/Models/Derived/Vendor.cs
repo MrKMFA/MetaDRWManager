@@ -91,8 +91,11 @@ namespace MetaDomingoLibrary.Models.Derived
 
         public override string ToString()
         {
-            return "VendorId: " + VendorId + "\n" +
-                   "VendorName: " + VendorName + "\n" +
+            string vid = "VendorId: " + VendorId;
+            string vme = "VendorName: " + VendorName;
+
+            return $"{String.Format("{0,20}", vid)}\n" +
+                   $"{String.Format("{0,20}", vme)}\n" +
                    base.ToString();
         }
     }

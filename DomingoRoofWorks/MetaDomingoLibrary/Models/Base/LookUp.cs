@@ -58,8 +58,11 @@ namespace MetaDomingoLibrary.Models.Base
         // *** Methods ***
         public override string ToString()
         {
-            return "CreatedAt: " + CreatedAt + "\n" +
-                    "ModifiedDate: " + ModifiedDate;
+            string cdt = "CreatedAt: " + CreatedAt;
+            string mdt = "ModifiedDate: " + ModifiedDate;
+
+            return  $"{String.Format("{0,15}", cdt)}\n" +
+                    $"{String.Format("{0,15}", mdt)}\n";
         }
     }
 }

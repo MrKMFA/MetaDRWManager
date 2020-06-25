@@ -76,7 +76,9 @@ namespace MetaDomingoLibrary.Models.Derived
 
         public override string ToString()
         {
-            return "CustomerId: " + CustomerId + "\n"+
+            string cus = "CustomerId: " + CustomerId;
+
+            return $"{String.Format("{0,20}", cus)}\n" +
                     base.ToString();
         } 
     }
