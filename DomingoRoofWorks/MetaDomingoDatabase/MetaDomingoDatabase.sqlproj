@@ -94,6 +94,7 @@
     <Build Include="dbo\Stored Procedures\Person\Customer\spCustomer_Insert.sql" />
     <Build Include="dbo\Stored Procedures\Person\Employee\spEmployee_Insert.sql" />
     <Build Include="dbo\Tables\InternalCompany.sql" />
+    <Build Include="dbo\Tables\Jobcard.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
