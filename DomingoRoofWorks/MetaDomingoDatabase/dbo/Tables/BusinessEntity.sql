@@ -2,7 +2,7 @@
 (
 	[EntityId]                  NVARCHAR(14)    PRIMARY KEY NOT NULL,
     [ContactName]               NVARCHAR(50)    ,
-    [Email]                     NVARCHAR(256)   ,
+    [Email]                     NVARCHAR(256)   UNIQUE,
     [Phone]                     NVARCHAR(13)    ,
     [TaxRegistrationNumber]     NVARCHAR(14)    ,
     [WebsiteUrl]                NVARCHAR(256)   ,
