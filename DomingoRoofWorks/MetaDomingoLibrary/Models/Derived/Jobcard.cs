@@ -14,7 +14,7 @@ namespace MetaDomingoLibrary.Models.Derived
         // *** Private Fields ***
         private string jobcardId;
         private Employee createdBy;
-        private Customer client;
+        private Customer customer;
         private Jobtype jobtype;
         private DateTime jobStartDate;
         private DateTime jobEndDate;
@@ -34,7 +34,7 @@ namespace MetaDomingoLibrary.Models.Derived
         }
 
         //-Used when instantiating default object (and base class) with initializing property values
-        public Jobcard(Employee createdBy, Customer client)
+        public Jobcard(Employee createdBy, Customer customer)
             : base()
         {
             this.jobcardId = "JCD" + DateTime.UtcNow.Date.Year.ToString() +
@@ -42,13 +42,13 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
 
             this.createdBy = createdBy;
-            this.client = client;
+            this.customer = customer;
 
             this.materials = new List<JobcardItem>();
             this.employeesAssigned = new List<JobcardEmployee>();
         }
 
-        public Jobcard(Employee createdBy, Customer client, Jobtype jobtype)
+        public Jobcard(Employee createdBy, Customer customer, Jobtype jobtype)
             : base()
         {
             this.jobcardId = "JCD" + DateTime.UtcNow.Date.Year.ToString() +
@@ -56,14 +56,14 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
 
             this.createdBy = createdBy;
-            this.client = client;
+            this.customer = customer;
             this.jobtype = jobtype;
 
             this.materials = new List<JobcardItem>();
             this.employeesAssigned = new List<JobcardEmployee>();
         }
 
-        public Jobcard(Employee createdBy, Customer client, Jobtype jobtype,
+        public Jobcard(Employee createdBy, Customer customer, Jobtype jobtype,
                         DateTime jobStart, DateTime jobEnd) 
             : base()
         {
@@ -72,7 +72,7 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
 
             this.createdBy = createdBy;
-            this.client = client;
+            this.customer = customer;
             this.jobtype = jobtype;
             this.jobStartDate = jobStart;
             this.jobEndDate = jobEnd;
@@ -81,7 +81,7 @@ namespace MetaDomingoLibrary.Models.Derived
             this.employeesAssigned = new List<JobcardEmployee>();
         }
 
-        public Jobcard(Employee createdBy, Customer client, Jobtype jobtype,
+        public Jobcard(Employee createdBy, Customer customer, Jobtype jobtype,
                         DateTime jobStart, DateTime jobEnd, List<JobcardItem> materials,
                         List<JobcardEmployee> employeesAssigned)
             : base()
@@ -91,7 +91,7 @@ namespace MetaDomingoLibrary.Models.Derived
                 DateTime.UtcNow.Date.Day.ToString() + Guid.NewGuid().ToString().Substring(0, 4).ToUpper();
 
             this.createdBy = createdBy;
-            this.client = client;
+            this.customer = customer;
             this.jobtype = jobtype;
             this.jobStartDate = jobStart;
             this.jobEndDate = jobEnd;
@@ -101,7 +101,7 @@ namespace MetaDomingoLibrary.Models.Derived
         }
 
         //-Used when initializing objects with values retrieved from database
-        public Jobcard(string jobcardId, Employee createdBy, Customer client, Jobtype jobtype,
+        public Jobcard(string jobcardId, Employee createdBy, Customer customer, Jobtype jobtype,
                         DateTime jobStart, DateTime jobEnd, List<JobcardItem> materials,
                         List<JobcardEmployee> employeesAssigned, DateTime createdAt, DateTime modifiedAt)
             : base(createdAt, modifiedAt)
@@ -109,7 +109,7 @@ namespace MetaDomingoLibrary.Models.Derived
             this.jobcardId = jobcardId;
 
             this.createdBy = createdBy;
-            this.client = client;
+            this.customer = customer;
             this.jobtype = jobtype;
             this.jobStartDate = jobStart;
             this.jobEndDate = jobEnd;
@@ -119,5 +119,122 @@ namespace MetaDomingoLibrary.Models.Derived
         }
 
         // *** Properties ***
+        public string JobcardId
+        {
+            get
+            {
+                return this.jobcardId;
+            }
+        }
+
+        public string CreatedById
+        {
+            get
+            {
+                return this.CreatedBy.EmployeeId;
+            }
+        }
+        public Employee CreatedBy
+        {
+            get
+            {
+                return this.createdBy;
+            }
+            set
+            {
+                this.createdBy = value;
+            }
+        }
+
+        public string CustomerId
+        {
+            get
+            {
+                return this.Customer.CustomerId;
+            }
+        }
+        public Customer Customer
+        {
+            get
+            {
+                return this.customer;
+            }
+            set
+            {
+                this.customer = value;
+            }
+        }
+
+        public string JobtypeId
+        {
+            get
+            {
+                return this.Jobtype.JobtypeId;
+            }
+        }
+        public Jobtype Jobtype
+        {
+            get
+            {
+                return this.jobtype;
+            }
+            set
+            {
+                this.jobtype = value;
+            }
+        }
+
+        public int JobDuration
+        {
+            get
+            {
+                return JobEndDate.Subtract(JobStartDate).Days;
+            }
+        }
+        public DateTime JobStartDate
+        {
+            get
+            {
+                return this.jobStartDate;
+            }
+            set
+            {
+                this.jobStartDate = value;
+            }
+        }
+        public DateTime JobEndDate
+        {
+            get
+            {
+                return this.jobEndDate;
+            }
+            set
+            {
+                this.jobEndDate = value;
+            }
+        }
+
+        public List<JobcardItem> Materials
+        {
+            get
+            {
+                return this.materials;
+            }
+            set
+            {
+                this.materials = value;
+            }
+        }
+        public List<JobcardEmployee> EmployeesAssigned
+        {
+            get
+            {
+                return this.employeesAssigned;
+            }
+            set
+            {
+                this.employeesAssigned = value;
+            }
+        }
     }
 }
