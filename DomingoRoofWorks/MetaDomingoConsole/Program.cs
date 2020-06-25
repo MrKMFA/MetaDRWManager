@@ -7,21 +7,11 @@ namespace MetaDomingoConsole
     {
         static void Main(string[] args)
         {
-            Customer kenneth = new Customer();
+            Customer customer = new Customer();
+            Employee employee = new Employee();
 
-            //Console.WriteLine(kenneth.CustomerId);
-            //Console.WriteLine(kenneth.PersonId);
-            //Console.WriteLine(kenneth.EntityId);
-            //Console.WriteLine(kenneth.CreatedAt);
-
-            CustomerInvoice obj = new CustomerInvoice(kenneth);
-            Console.WriteLine(obj.CustomerInvoiceId);
-            Console.WriteLine(obj.InvoiceId);
-            Console.WriteLine(obj.Customer.EntityId);
-            Console.WriteLine(obj.Customer.PersonId);
-            Console.WriteLine(obj.Customer.CustomerId);
-            Console.WriteLine(obj.CreatedAt);
-            Console.WriteLine(obj.ModifiedDate);
+            Console.WriteLine(customer);
+            Console.WriteLine(employee);
 
             Console.ReadLine();
         }

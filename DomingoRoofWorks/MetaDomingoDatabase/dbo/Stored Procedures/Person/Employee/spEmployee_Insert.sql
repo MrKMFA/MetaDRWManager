@@ -15,27 +15,29 @@
 	@PersonId nvarchar(14),
 	@FName nvarchar(50),
 	@LName nvarchar(50),
-	@Created datetime2(7),
-	@Mod datetime2(7), 
 	@EmployeeId nvarchar(14)
 WITH EXECUTE AS CALLER
 AS
 BEGIN
 	SET NOCOUNT ON;
 
-	DECLARE @Rowcount int
+	DECLARE @Flag int
+	DECLARE @Rowcount int = -1
 
 	BEGIN TRY
 		BEGIN TRANSACTION
-		--execute sproc to insert person data
-		EXEC @Rowcount = spPerson_Insert @EntityId, @ContactName, @Email, @Phone, @TaxRegNum,
-				@Website, @AddrLine1, @AddrLine2, @CityId, @PostCode, 
-				@AdditionInfo, @CreatedAt, @Modified, @PersonId, @LName, @FName, @Created, @Mod;
-		IF @Rowcount > 0
-			-- Insert employee
-			INSERT INTO [dbo].[Employee](EmployeeId, PersonId)
-			VALUES(@EmployeeId, @PersonId);
-			COMMIT TRANSACTION;
+			--execute sproc to insert person data
+			EXEC @Flag = spPerson_Insert @EntityId, @ContactName, @Email, @Phone, @TaxRegNum,
+					@Website, @AddrLine1, @AddrLine2, @CityId, @PostCode, 
+					@AdditionInfo, @CreatedAt, @Modified, @PersonId, @LName, @FName;
+
+			IF @Flag > 0
+				-- Insert employee
+				INSERT INTO [dbo].[Employee](EmployeeId, EntityId)
+				VALUES(@EmployeeId, @EntityId);
+					SET @Rowcount = @@ROWCOUNT;
+
+		COMMIT TRANSACTION;
 	END TRY
 	BEGIN CATCH
 	--Err..something went wrong

@@ -97,4 +97,7 @@
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MetaDomingoDatabase.refactorlog" />
+  </ItemGroup>
 </Project>

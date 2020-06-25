@@ -14,9 +14,7 @@
 	@Modified datetime2(7),
 	@PersonId nvarchar(14),
 	@FName nvarchar(50),
-	@LName nvarchar(50),
-	@Created datetime2(7),
-	@Mod datetime2(7)
+	@LName nvarchar(50)
 WITH EXECUTE AS CALLER
 AS
 BEGIN
@@ -33,11 +31,9 @@ BEGIN
 		IF @Rowcount > 0
 			-- Insert Person
 			INSERT INTO [dbo].[Person]
-				(PersonId, EntityId, FirstName, LastName, CreatedAt, ModifiedDate)
-			VALUES(@PersonId, @EntityId, @FName, @LName, @Created, @Mod)
+				(PersonId, EntityId, FirstName, LastName)
+			VALUES(@PersonId, @EntityId, @FName, @LName)
 				SET @Rowcount = @@ROWCOUNT;
-
-			COMMIT TRANSACTION;
 
 		COMMIT TRANSACTION;
 	END TRY
