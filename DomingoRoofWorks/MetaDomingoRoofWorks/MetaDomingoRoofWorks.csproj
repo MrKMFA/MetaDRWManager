@@ -15,4 +15,8 @@
     <PackageReference Include="SendGrid" Version="9.16.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MetaDomingoLibrary\MetaDomingoLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

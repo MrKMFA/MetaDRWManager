@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MetaDomingoLibrary.Models.Derived.Jobcard">
+    <Position X="1.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEEACQwBAGAJAAAEAAAECAAABAAQABAAEAAAAABAAEE=</HashCode>
+      <FileName>Models\Derived\Jobcard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Base.LookUp">
+    <Position X="4.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAEACAAAAAAAgAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\LookUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.JobcardEmployee">
+    <Position X="7.25" Y="3.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAhAgAAAQAMAAAADAgAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Models\Derived\JobcardEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.JobcardItem">
+    <Position X="7.25" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAQEAAAEFAAAABCAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\Derived\JobcardItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.Jobtype">
+    <Position X="4.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEEAABABAAAAAAAAAAAAAAAAAAAAAAAgABAAIAA=</HashCode>
+      <FileName>Models\Derived\Jobtype.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

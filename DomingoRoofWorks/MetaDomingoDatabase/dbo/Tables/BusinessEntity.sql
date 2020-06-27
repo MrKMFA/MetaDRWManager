@@ -11,6 +11,6 @@
     [CityId]                    NVARCHAR(14)    NULL,
     [PostCode]                  NVARCHAR(4)     ,
     [AdditionalInfo]            NVARCHAR(MAX)   ,
-    [CreatedAt]                 DATETIME2(7)    NOT NULL,
-    [ModifiedDate]              DATETIME2(7)    NOT NULL
+    [CreatedAt]                 DATETIME2(7)    NOT NULL DEFAULT GETUTCDATE(),
+    [ModifiedDate]              DATETIME2(7)    NOT NULL DEFAULT GETUTCDATE()
 )

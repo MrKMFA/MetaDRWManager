@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MetaDomingoLibrary.Models.Base.Invoice">
+    <Position X="6.25" Y="1.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAwKCAAMAAkDCAAAAgEAQIAhAACAQEAAgFBAQIAoCg=</HashCode>
+      <FileName>Models\Base\Invoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Base.LookUp">
+    <Position X="3.5" Y="1.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAEACAAAAAAAgAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\LookUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.CustomerInvoice">
+    <Position X="9.5" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEBAAABAAAAAAAIAAAAAAAAAAAAAAAAIAAAAAAAAQA=</HashCode>
+      <FileName>Models\Derived\CustomerInvoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.VendorInvoice">
+    <Position X="9.5" Y="3" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAABAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAIAAAQA=</HashCode>
+      <FileName>Models\Derived\VendorInvoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.InvoiceItem">
+    <Position X="3.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAACAAAAAgAQAAAAEAAAAAACAAAAAgAAAACg=</HashCode>
+      <FileName>Models\Derived\InvoiceItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaDomingoLibrary.Models.Derived.Tax">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAADAAAAAAAAAAAAAAAIAAAAAAAAAAM=</HashCode>
+      <FileName>Models\Derived\Tax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
