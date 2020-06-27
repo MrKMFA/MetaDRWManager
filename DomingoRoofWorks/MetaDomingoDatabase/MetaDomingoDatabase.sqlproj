@@ -98,6 +98,7 @@
     <Build Include="dbo\Tables\JobcardEmployee.sql" />
     <Build Include="dbo\Tables\JobcardItem.sql" />
     <Build Include="dbo\Tables\Item.sql" />
+    <Build Include="dbo\Tables\User.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />

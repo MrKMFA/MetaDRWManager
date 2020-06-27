@@ -36,9 +36,10 @@ namespace MetaDomingoLibrary.Internal.DataAccess
         //-Retrieve DB Connection String from Configuration file based on Key Name 
         public string GetConnString(string name)
         {
-            var section = _config.GetSection($"{name}");
+            return _config.GetConnectionString(name);
+            //var section = _config.GetSection($"{name}");
 
-            return section.Value;
+            //return section.Value;
         }
 
         //-Generic Method that Retrieves a List of objects from DB 
