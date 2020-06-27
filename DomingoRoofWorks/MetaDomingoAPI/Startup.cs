@@ -12,6 +12,8 @@ using MetaDomingoAPI.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MetaDomingoLibrary.Internal.DataAccess;
+using MetaDomingoLibrary.DataAccess;
 
 namespace MetaDomingoAPI
 {
@@ -32,6 +34,10 @@ namespace MetaDomingoAPI
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddTransient<IUserData, UserData>();
+            services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
