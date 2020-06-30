@@ -17,19 +17,23 @@ namespace MetaDomingoConsole
 
             Jobcard jobcard = new Jobcard(employee, customer, jobtype);
 
-            //Console.WriteLine("-----------------------------------");
-            //Console.WriteLine(businessEntity);
-            //Console.WriteLine("-----------------------------------");
-            //Console.WriteLine(vendor);
-            //Console.WriteLine("-----------------------------------");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(businessEntity);
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(vendor);
+            Console.WriteLine("-----------------------------------");
             Console.WriteLine(customer);
-            //Console.WriteLine("-----------------------------------");
-            //Console.WriteLine(employee);
-            //Console.WriteLine("-----------------------------------");
-            //Console.WriteLine(jobtype);
-            //Console.WriteLine("-----------------------------------");
-            //Console.WriteLine(jobcard);
-            //Console.WriteLine("-----------------------------------");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(employee);
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(jobtype);
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(jobcard);
+            Console.WriteLine("-----------------------------------");
+
+            //Employee lorenzo = new Employee();
+
+            //Console.WriteLine(lorenzo);
 
             Console.ReadLine();
         }

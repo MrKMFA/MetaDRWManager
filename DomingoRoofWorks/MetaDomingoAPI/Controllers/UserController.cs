@@ -6,7 +6,9 @@ using MetaDomingoAPI.Data;
 using MetaDomingoAPI.Models;
 using MetaDomingoLibrary.DataAccess;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace MetaDomingoAPI.Controllers
 {
@@ -16,13 +18,19 @@ namespace MetaDomingoAPI.Controllers
     {
         private readonly IUserData _userData;
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserData userData, ApplicationDbContext context)
+        public UserController(IUserData userData, ApplicationDbContext context,
+            UserManager<IdentityUser> userManager, ILogger<UserController> logger)
         {
             _userData = userData;
             _context = context;
+            _userManager = userManager;
+            _logger = logger;
         }
 
+        [HttpGet]
         public List<ApplicationUser> GetAllUsers()
         {
             List<ApplicationUser> output = new List<ApplicationUser>();
