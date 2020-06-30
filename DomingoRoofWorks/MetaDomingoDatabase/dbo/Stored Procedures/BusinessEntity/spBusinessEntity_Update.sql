@@ -1,20 +1,16 @@
-﻿CREATE PROCEDURE [dbo].[spPerson_Insert]
+﻿CREATE PROCEDURE [dbo].[spBusinessEntity_Update]
 	@EntityId nvarchar(14),
 	@ContactName nvarchar(50),
 	@Email nvarchar(256),
 	@Phone nvarchar(13),
 	@TaxRegNum nvarchar(14),
-	@WebsiteURL nvarchar(256),
+	@WebURL nvarchar(256),
 	@AddrLine1 nvarchar(max),
 	@AddrLine2 nvarchar(max),
 	@CityId nvarchar(14),
 	@PostCode nvarchar(4),
 	@AdditionInfo nvarchar(max),
-	@CreatedAt datetime2(7),
-	@Modified datetime2(7),
-	@PersonId nvarchar(14),
-	@FName nvarchar(50),
-	@LName nvarchar(50)
+	@Modified datetime2(7)
 WITH EXECUTE AS CALLER
 AS
 BEGIN
@@ -24,17 +20,22 @@ BEGIN
 
 	BEGIN TRY
 		BEGIN TRANSACTION
-		--execute sproc to insert businessEntity
-		EXEC @Rowcount = spBusinessEntity_Insert @EntityId, @ContactName, @Email, @Phone, @TaxRegNum,
-				@WebsiteUrl, @AddrLine1, @AddrLine2, @CityId, @PostCode, 
-				@AdditionInfo, @CreatedAt, @Modified;
-		IF @Rowcount > 0
-			-- Insert Person
-			INSERT INTO [dbo].[Person]
-				(PersonId, EntityId, FirstName, LastName)
-			VALUES(@PersonId, @EntityId, @FName, @LName)
+			UPDATE [dbo].[BusinessEntity]
+			SET
+				ContactName = @ContactName,
+				Email = @Email,
+				Phone = @Phone,
+				TaxRegistrationNumber = @TaxRegNum,
+				WebsiteUrl = @WebURL,
+				AddressLine1 = @AddrLine1,
+				AddressLine2 = @AddrLine2,
+				CityId = @CityId,
+				PostCode = @PostCode,
+				AdditionalInfo = @AdditionInfo,
+				ModifiedDate = @Modified
+			WHERE
+				EntityId = @EntityId
 				SET @Rowcount = @@ROWCOUNT;
-
 		COMMIT TRANSACTION;
 	END TRY
 	BEGIN CATCH

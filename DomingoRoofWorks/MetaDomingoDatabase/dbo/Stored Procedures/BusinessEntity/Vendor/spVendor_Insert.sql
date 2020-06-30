@@ -1,4 +1,6 @@
-﻿CREATE PROCEDURE [dbo].[spPerson_Insert]
+﻿CREATE PROCEDURE [dbo].[spVendor_Insert]
+	@VendorId nvarchar(14),
+	@VendorName nvarchar(50),
 	@EntityId nvarchar(14),
 	@ContactName nvarchar(50),
 	@Email nvarchar(256),
@@ -11,10 +13,7 @@
 	@PostCode nvarchar(4),
 	@AdditionInfo nvarchar(max),
 	@CreatedAt datetime2(7),
-	@Modified datetime2(7),
-	@PersonId nvarchar(14),
-	@FName nvarchar(50),
-	@LName nvarchar(50)
+	@Modified datetime2(7)
 WITH EXECUTE AS CALLER
 AS
 BEGIN
@@ -29,10 +28,10 @@ BEGIN
 				@WebsiteUrl, @AddrLine1, @AddrLine2, @CityId, @PostCode, 
 				@AdditionInfo, @CreatedAt, @Modified;
 		IF @Rowcount > 0
-			-- Insert Person
-			INSERT INTO [dbo].[Person]
-				(PersonId, EntityId, FirstName, LastName)
-			VALUES(@PersonId, @EntityId, @FName, @LName)
+			-- Insert Vendor
+			INSERT INTO [dbo].[Vendor]
+				(VendorId, EntityId, VendorName)
+			VALUES(@VendorId, @EntityId, @VendorName)
 				SET @Rowcount = @@ROWCOUNT;
 
 		COMMIT TRANSACTION;
@@ -45,5 +44,4 @@ BEGIN
 			ROLLBACK TRANSACTION;
 		END
 	END CATCH;
-END
-Return @Rowcount;
+END;

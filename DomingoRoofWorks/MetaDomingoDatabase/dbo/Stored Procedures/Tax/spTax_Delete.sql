@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[spTax_Delete]
+	@TaxId nvarchar(14)
+WITH EXECUTE AS CALLER
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DELETE FROM [dbo].[Tax]
+	WHERE TaxId = @TaxId;
+END;
