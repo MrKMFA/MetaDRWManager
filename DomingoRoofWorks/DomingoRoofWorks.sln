@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaDomingoRoofWorks", "Met
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaDomingoConsole", "MetaDomingoConsole\MetaDomingoConsole.csproj", "{7D891BFA-1309-4755-BB71-B408D2B2AAF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDomingoAPI", "MetaDomingoAPI\MetaDomingoAPI.csproj", "{8754023B-E9DB-406E-969B-1696F5CBED12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDomingoAPI", "MetaDomingoAPI\MetaDomingoAPI.csproj", "{7C500FF5-5F91-4509-8FC9-AEC926FB249A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{7D891BFA-1309-4755-BB71-B408D2B2AAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D891BFA-1309-4755-BB71-B408D2B2AAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D891BFA-1309-4755-BB71-B408D2B2AAF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8754023B-E9DB-406E-969B-1696F5CBED12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8754023B-E9DB-406E-969B-1696F5CBED12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8754023B-E9DB-406E-969B-1696F5CBED12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8754023B-E9DB-406E-969B-1696F5CBED12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C500FF5-5F91-4509-8FC9-AEC926FB249A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C500FF5-5F91-4509-8FC9-AEC926FB249A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C500FF5-5F91-4509-8FC9-AEC926FB249A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C500FF5-5F91-4509-8FC9-AEC926FB249A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

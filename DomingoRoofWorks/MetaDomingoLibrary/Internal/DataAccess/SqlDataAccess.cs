@@ -68,6 +68,17 @@ namespace MetaDomingoLibrary.Internal.DataAccess
             }
         }
 
+        public void SaveData<T, U>(string storedProcedure, U parameters, string connectionStringName)
+        {
+            string connectionString = GetConnString(connectionStringName);
+
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Execute(storedProcedure, parameters,
+                    commandType: CommandType.StoredProcedure);
+            }
+        }
+
         //-Start a transaction within selected DB
         public void StartTransaction(string connectionStringName)
         {
