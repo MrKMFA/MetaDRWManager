@@ -15,7 +15,6 @@
 	@PersonId nvarchar(14),
 	@FName nvarchar(50),
 	@LName nvarchar(50)
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 	SET NOCOUNT ON;

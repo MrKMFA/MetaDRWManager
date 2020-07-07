@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MetaDomingoLibrary.Internal.DataAccess;
+using MetaDomingoLibrary.Models.Base;
+using MetaDomingoLibrary.Models.DatabaseModels;
 using MetaDomingoLibrary.Models.Derived;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,12 +18,12 @@ namespace MetaDomingoAPI.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerData _customerData;
-        private readonly ILogger<CustomerController> _logger;
+        private readonly IBusinessEntityData _businessEntityData;
 
-        public CustomerController(ICustomerData customerData, ILogger<CustomerController> logger)
+        public CustomerController(ICustomerData customerData, IBusinessEntityData businessEntityData)
         {
             _customerData = customerData;
-            _logger = logger;
+            _businessEntityData = businessEntityData;
         }
 
         // GET: api/<CustomerController>
@@ -29,6 +31,7 @@ namespace MetaDomingoAPI.Controllers
         public IEnumerable<Customer> Get()
         {
             var data = _customerData.GetAllCustomers();
+            //var data = _businessEntityData.GetAllBusinessEntities();
 
             return data;
         }

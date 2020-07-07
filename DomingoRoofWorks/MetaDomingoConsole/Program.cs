@@ -1,6 +1,7 @@
 ﻿using MetaDomingoLibrary.Models.Base;
 using MetaDomingoLibrary.Models.Derived;
 using System;
+using System.Collections.Generic;
 
 namespace MetaDomingoConsole
 {
@@ -8,16 +9,19 @@ namespace MetaDomingoConsole
     {
         static void Main(string[] args)
         {
-            //BusinessEntity businessEntity = new Vendor();
-            //Vendor vendor = new Vendor();
+            BusinessEntity businessEntity = new Vendor();
+            Vendor vendor = new Vendor();
 
-            //Customer customer = new Customer();
-            //Employee employee = new Employee();
-            //Jobtype jobtype = new Jobtype();
+            Customer customer = new Customer();
+            Employee employee = new Employee();
+            Jobtype jobtype = new Jobtype();
+            Customer madeleine = new Customer();
 
-            //Jobcard jobcard = new Jobcard(employee, customer, jobtype);
+            Jobcard jobcard = new Jobcard(employee, customer, jobtype);
 
-            //Console.WriteLine("-----------------------------------");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine(madeleine);
+            Console.WriteLine("-----------------------------------");
             //Console.WriteLine(businessEntity);
             //Console.WriteLine("-----------------------------------");
             //Console.WriteLine(vendor);
@@ -31,33 +35,57 @@ namespace MetaDomingoConsole
             //Console.WriteLine(jobcard);
             //Console.WriteLine("-----------------------------------");
 
-            Customer customer = new Customer();
-            Customer customer1 = new Customer();
-            Customer customer2 = new Customer();
-            Customer customer3 = new Customer();
-            Customer customer4 = new Customer();
-
-            Console.WriteLine(customer.EntityId);
-            Console.WriteLine(customer1.EntityId);
-            Console.WriteLine(customer2.EntityId);
-            Console.WriteLine(customer3.EntityId);
-            Console.WriteLine(customer4.EntityId);
-            Console.WriteLine(customer.PersonId);
-            Console.WriteLine(customer1.PersonId);
-            Console.WriteLine(customer2.PersonId);
-            Console.WriteLine(customer3.PersonId);
-            Console.WriteLine(customer4.PersonId);
-            Console.WriteLine(customer.CustomerId);
-            Console.WriteLine(customer1.CustomerId);
-            Console.WriteLine(customer2.CustomerId);
-            Console.WriteLine(customer3.CustomerId);
-            Console.WriteLine(customer4.CustomerId);
 
             //Employee lorenzo = new Employee();
 
             //Console.WriteLine(lorenzo);
+            //List<Customer> list = new List<Customer>();
+
+            //for(int i=0; i <= 50; i++)
+            //{
+            //    Customer obj = new Customer();
+            //    obj.Email = $"test{i}@gmail.com";
+            //    list.Add(obj);
+            //}
+
+            //PrintEntities(list);
+            //Console.WriteLine();
+
+            //PrintPeople(list);
+            //Console.WriteLine();
+
+            //PrintCustomers(list);
+            //Console.WriteLine();
+
+            //Customer customer = new Customer();
+
 
             Console.ReadLine();
+        }
+
+        
+        public static void PrintEntities(List<Customer> list)
+        {
+            foreach(Customer row in list)
+            {
+                Console.WriteLine($"('{row.EntityId}', '{row.Email}', '{row.CreatedAt}', '{row.ModifiedDate}'),");
+            }
+        }
+
+        public static void PrintPeople(List<Customer> list)
+        {
+            foreach (Customer row in list)
+            {
+                Console.WriteLine($"('{row.PersonId}', '{row.EntityId}', '{row.FirstName}', '{row.LastName}'),");
+            }
+        }
+
+        public static void PrintCustomers(List<Customer> list)
+        {
+            foreach (Customer row in list)
+            {
+                Console.WriteLine($"('{row.CustomerId}', '{row.PersonId}'),");
+            }
         }
     }
 }

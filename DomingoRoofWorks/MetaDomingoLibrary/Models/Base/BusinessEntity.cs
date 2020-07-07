@@ -7,7 +7,7 @@ using System;
 
 namespace MetaDomingoLibrary.Models.Base
 {
-    public abstract class BusinessEntity : LookUp
+    public class BusinessEntity : LookUp
     {
         // *** Private Fields ***
         private string entityId;
@@ -85,6 +85,10 @@ namespace MetaDomingoLibrary.Models.Base
             get
             {
                 return this.entityId;
+            }
+            set
+            {
+                this.entityId = value;
             }
         }
 

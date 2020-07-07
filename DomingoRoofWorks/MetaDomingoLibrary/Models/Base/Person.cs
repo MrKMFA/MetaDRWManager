@@ -7,7 +7,7 @@ using System;
 
 namespace MetaDomingoLibrary.Models.Base
 {
-    public abstract class Person : BusinessEntity
+    public class Person : BusinessEntity
     {
         // *** Private Fields ***
         private string personId;
@@ -55,6 +55,20 @@ namespace MetaDomingoLibrary.Models.Base
             lastName = lName;
         }
 
+        public Person(string perId, string entId, string fName, string lName, string conName,
+                    string email, string phone, string taxNum,
+                    string webUrl, string addrLine1, string addrLine2,
+                    string cityId, string postCode, string addInfo, DateTime created, DateTime modified)
+            : base(entId, conName, email, phone, taxNum,
+                  webUrl, addrLine1, addrLine2, cityId, postCode,
+                  addInfo, created, modified)
+        {
+            personId = perId;
+            entityId = entId;
+            firstName = fName;
+            lastName = lName;
+        }
+
 
 
         // *** Properties ***
@@ -63,6 +77,10 @@ namespace MetaDomingoLibrary.Models.Base
             get
             {
                 return this.personId;
+            }
+            set
+            {
+                this.personId = value;
             }
         }
 
@@ -110,7 +128,7 @@ namespace MetaDomingoLibrary.Models.Base
             return $"{String.Format("{0,20}", per)}\n" +
                    $"{String.Format("{0,20}", fne)}\n" +
                    $"{String.Format("{0,20}", lne)}\n" +
-                    base.ToString(); 
+                    base.ToString();
         }
     }
 }

@@ -3,7 +3,6 @@
 	@PersonId nvarchar(14),
 	@EntityId nvarchar(14)
 
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 

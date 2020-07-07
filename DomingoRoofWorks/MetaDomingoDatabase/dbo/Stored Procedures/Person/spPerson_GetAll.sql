@@ -1,6 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[spPerson_GetAll]
-
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 

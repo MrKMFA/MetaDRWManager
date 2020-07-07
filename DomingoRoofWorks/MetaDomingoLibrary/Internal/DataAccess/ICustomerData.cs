@@ -3,6 +3,7 @@
 //Description:
 //Last Updated: 2020/06/30
 
+using MetaDomingoLibrary.Models.DatabaseModels;
 using MetaDomingoLibrary.Models.Derived;
 using System.Collections.Generic;
 

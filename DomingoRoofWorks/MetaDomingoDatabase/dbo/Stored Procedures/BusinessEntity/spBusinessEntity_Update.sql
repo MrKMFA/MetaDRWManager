@@ -11,7 +11,6 @@
 	@PostCode nvarchar(4),
 	@AdditionInfo nvarchar(max),
 	@Modified datetime2(7)
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 	SET NOCOUNT ON;

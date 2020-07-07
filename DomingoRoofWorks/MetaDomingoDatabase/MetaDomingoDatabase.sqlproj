@@ -22,6 +22,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <PermissionSet>SAFE</PermissionSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -60,7 +61,6 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Functions" />
-    <Folder Include="Publish Locations" />
     <Folder Include="dbo\Stored Procedures\BusinessEntity" />
     <Folder Include="dbo\Stored Procedures\Person" />
     <Folder Include="dbo\Stored Procedures\Invoice" />
@@ -80,6 +80,11 @@
     <Folder Include="dbo\Stored Procedures\Jobcard\JobcardEmployee" />
     <Folder Include="dbo\Stored Procedures\Jobcard\JobcardItem" />
     <Folder Include="dbo\Stored Procedures\Item" />
+    <Folder Include="dbo\Stored Procedures\Test" />
+    <Folder Include="dbo\Stored Procedures\Test\Person" />
+    <Folder Include="dbo\Stored Procedures\Test\Person\Customer" />
+    <Folder Include="dbo\Stored Procedures\Test\Person\Employee" />
+    <Folder Include="dbo\Stored Procedures\Test\BusinessEntity" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Functions\udfGetJobcardMaterials.sql" />
@@ -164,11 +169,25 @@
     <Build Include="dbo\Stored Procedures\Tax\spTax_Insert.sql" />
     <Build Include="dbo\Stored Procedures\Tax\spTax_Update.sql" />
     <Build Include="dbo\Stored Procedures\Tax\spTax_Delete.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Publish Locations\MetaDomingoDatabase.publish.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="MetaDomingoDatabase.refactorlog" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Customer\spCustomerT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Customer\spCustomerT_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Customer\spCustomerT_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Customer\spCustomerT_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Customer\spCustomerT_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Employee\spEmployeeT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Employee\spEmployeeT_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Employee\spEmployeeT_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Employee\spEmployeeT_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\Employee\spEmployeeT_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\spPersonT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\spPersonT_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\spPersonT_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\spPersonT_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Test\Person\spPersonT_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Test\BusinessEntity\spBusinessEntityT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Test\BusinessEntity\spBusinessEntityT_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Test\BusinessEntity\spBusinessEntityT_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\Test\BusinessEntity\spBusinessEntityT_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Test\BusinessEntity\spBusinessEntityT_Update.sql" />
   </ItemGroup>
 </Project>

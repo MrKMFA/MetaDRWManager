@@ -12,7 +12,6 @@
 	@AdditionInfo nvarchar(max),
 	@CreatedAt datetime2(7),
 	@Modified datetime2(7)
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 	SET NOCOUNT ON;

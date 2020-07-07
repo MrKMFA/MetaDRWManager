@@ -28,8 +28,10 @@ namespace MetaDomingoAPI
         {
             services.AddControllers();
 
-            services.AddTransient<ICustomerData, CustomerData>();
-            services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+            services.AddScoped<ICustomerData, CustomerData>();
+            services.AddScoped<IPersonData, PersonData>();
+            services.AddScoped<IBusinessEntityData, BusinessEntityData>();
+            services.AddScoped<ISqlDataAccess, SqlDataAccess>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

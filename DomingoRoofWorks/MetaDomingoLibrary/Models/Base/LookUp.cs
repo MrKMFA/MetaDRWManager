@@ -56,13 +56,13 @@ namespace MetaDomingoLibrary.Models.Base
         }
 
         // *** Methods ***
-        public override string ToString()
-        {
-            string cdt = "CreatedAt: " + CreatedAt;
-            string mdt = "ModifiedDate: " + ModifiedDate;
+        //public override string ToString()
+        //{
+        //    string cdt = "CreatedAt: " + CreatedAt;
+        //    string mdt = "ModifiedDate: " + ModifiedDate;
 
-            return  $"{String.Format("{0,15}", cdt)}\n" +
-                    $"{String.Format("{0,15}", mdt)}\n";
-        }
+        //    return  $"{String.Format("{0,15}", cdt)}\n" +
+        //            $"{String.Format("{0,15}", mdt)}\n";
+        //}
     }
 }

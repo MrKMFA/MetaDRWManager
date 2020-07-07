@@ -2,7 +2,6 @@
 
 	@CustomerId nvarchar(14)
 
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 

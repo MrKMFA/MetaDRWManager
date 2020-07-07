@@ -13,4 +13,10 @@
     <ProjectReference Include="..\MetaDomingoLibrary\MetaDomingoLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DomingoBLL">
+      <HintPath>..\..\DomingoRoofWorks_v2\DomingoBLL\bin\Debug\netstandard2.0\DomingoBLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

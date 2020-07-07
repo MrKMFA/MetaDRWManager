@@ -1,6 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spBusinessEntity_GetAll]
 
-WITH EXECUTE AS CALLER
 AS
 BEGIN
 

@@ -4,6 +4,7 @@
 //Last Updated: 2020/06/30
 
 using MetaDomingoLibrary.Models.Base;
+using MetaDomingoLibrary.Models.DatabaseModels;
 using MetaDomingoLibrary.Models.Derived;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace MetaDomingoLibrary.Internal.DataAccess
 
         public Customer GetCustomerById(string id)
         {
-            var data = _sql.LoadData<Customer, dynamic>("dbo.spCustomer_GetById", id, "MetaDomingoDatabase").FirstOrDefault();
+            var data = _sql.LoadData<Customer, dynamic>("dbo.spCustomer_GetById", new { id }, "MetaDomingoDatabase").FirstOrDefault();
 
             return data;
         }

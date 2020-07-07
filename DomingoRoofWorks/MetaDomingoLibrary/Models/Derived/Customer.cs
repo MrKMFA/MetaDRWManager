@@ -54,6 +54,17 @@ namespace MetaDomingoLibrary.Models.Derived
             this.person = person;
         }
 
+        public Customer(string custId, string perId, string entId,
+                    string fName, string lName, string conName,
+                    string email, string phone, string taxNum,
+                    string webUrl, string addrLine1, string addrLine2,
+                    string cityId, string postCode, string addInfo,
+                    DateTime created, DateTime modified)
+            : base(perId, entId, fName, lName, conName, email, phone, taxNum, webUrl, addrLine1, addrLine2, cityId, 
+                  postCode, addInfo, created, modified)
+        {
+            this.customerId = custId;
+        }
 
 
 
@@ -80,6 +91,6 @@ namespace MetaDomingoLibrary.Models.Derived
 
             return $"{String.Format("{0,20}", cus)}\n" +
                     base.ToString();
-        } 
+        }
     }
 }
